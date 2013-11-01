@@ -41,21 +41,18 @@ h1 {
 
 h2 {
     color: $burgundy;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
-.burgundy {
-    color: $burgundy;
+p + p {
+    margin-top: 10px;
 }
 
 #site_nav {
-    $bg_color: #fff;
-
     position: fixed;
     padding: 15px 0;
     width: 100%;
-    background-color: $bg_color; /*RGB Fallback */
-    background-color: transparentize($bg_color, 0.05);
+    background-color: #fff;
     font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
     text-align: center;
 
@@ -87,7 +84,7 @@ h2 {
 }
 
 #about {
-    padding: 140px 0;
+    padding: 120px 0 100px 0;
     color: $foam;
     text-align: center;
     text-transform: uppercase;
@@ -96,6 +93,10 @@ h2 {
 
     h1 {
         margin-bottom: 0;
+
+        span {
+            color: $burgundy;
+        }
     }
 
     p {
@@ -103,12 +104,36 @@ h2 {
     }
 }
 
+// ===========================================================================
+// Sections
+// ===========================================================================
+
+.parallax {
+    background-attachment: fixed;
+}
+
+.content {
+    padding: 35px 30px;
+    background-color: #fff;
+    @include box_shadow(0, 0, 30px, transparentize(#999, .5));
+}
+
 section {
-    padding: 140px;
-    background-color: #f3f3f3;
+    padding: 250px 150px;
 
     + section {
         margin-top: 10px;
     }
 }
 
+#wedding {
+    background-image: url('http://farm3.staticflickr.com/2872/10443865095_b17cfab1ed_k.jpg');
+}
+
+#accomodations {
+    background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
+}
+
+#registries {
+    background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
+}
