@@ -1,0 +1,114 @@
+@import "_common.scss";
+
+// ===========================================================================
+// Template
+// ===========================================================================
+
+body {
+    background-color: #fff;
+    color: #999;
+    font-size: 1.05em;
+    line-height: 1.45;
+    font-family: helvetica, arial, sans-serif;
+    -webkit-text-size-adjust: none;
+}
+
+a {
+    color: $teal;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($teal, 20%);
+    }
+}
+
+.brandon_grotesque {
+    font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend .brandon_grotesque;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: $gray;
+    font-weight: 900;
+    font-size: 6em;
+}
+
+h2 {
+    color: $burgundy;
+    font-size: 1.2em;
+}
+
+.burgundy {
+    color: $burgundy;
+}
+
+#site_nav {
+    $bg_color: #fff;
+
+    position: fixed;
+    padding: 15px 0;
+    width: 100%;
+    background-color: $bg_color; /*RGB Fallback */
+    background-color: transparentize($bg_color, 0.05);
+    font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
+    text-align: center;
+
+    li {
+        display: inline-block;
+
+        + li {
+            margin-left: 8px;
+        }
+    }
+
+    a {
+        display: inline-block;
+        padding: 8px 14px;
+        color: $foam;
+        font-size: 1.12em;
+        text-transform: uppercase;
+
+        &:hover {
+            color: darken($foam, 15%);
+        }
+
+        &.active {
+            color: #fff;
+            background-color: $foam;
+            border-radius: 3px;
+        }
+    }
+}
+
+#about {
+    padding: 140px 0;
+    color: $foam;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    @extend .brandon_grotesque;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 1.6em;
+    }
+}
+
+section {
+    padding: 140px;
+    background-color: #f3f3f3;
+
+    + section {
+        margin-top: 10px;
+    }
+}
+

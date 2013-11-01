@@ -1,0 +1,27 @@
+// ===========================================================================
+// Variables
+// ===========================================================================
+$foam: #94b2b9;
+$burgundy: #7f4245;
+$gray: #333333;
+$teal: #398397;
+
+// ===========================================================================
+// Mixins
+// ===========================================================================
+
+@mixin simple_transition($duration: 0.08s, $property: all, $easing: ease-out, $delay: 0s) {
+    -ms-transition: $property $duration $easing $delay;
+    -webkit-transition: $property $duration $easing $delay;
+    transition: $property $duration $easing $delay;
+}
+
+@mixin at2x($image_name, $w: auto, $h: auto, $extention: '.png') {
+  background-image: url('../../images/' + ($image_name + $extention));
+  $x2img : $image_name + '@2x' + $extention;
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+    background-image: url('../../images/' + ($x2img));
+    background-size: $w $h;
+  }
+}
