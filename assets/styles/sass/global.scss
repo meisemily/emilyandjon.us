@@ -121,20 +121,21 @@ p + p {
 
 .content {
     padding: 30px;
+    width: 50%;
     background-color: #fff;
-    @include box_shadow(0, 0, 30px, transparentize(#999, .5));
 }
 
 section {
-    padding: 100px 150px;
-
-    + section {
-        margin-top: 10px;
-    }
+    padding: 100px 50px;
 }
 
 #wedding {
     background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
+    text-align: center;
+
+    .content {
+        margin: 0 auto;
+    }
 
     $ring_size: 80px;
 
@@ -158,24 +159,29 @@ section {
 }
 
 #accomodations {
-    background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
+    background-color: $foam;
 }
 
 #registries {
     background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
+    overflow: hidden;
+
+    .content {
+        float: right;
+    }
 }
 
 // ===========================================================================
 // Media Queries
 // ===========================================================================
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
     #site_nav {
         display: none;
     }
 
     #about {
-        padding: 30px;
+        padding: 50px 30px;
 
         h1 {
             font-size: 70px;
@@ -183,6 +189,10 @@ section {
     }
 
     section {
-        padding: 50px 20px;
+        padding: 50px;
+    }
+
+    .content {
+        width: auto;
     }
 }

@@ -16,11 +16,6 @@ $teal: #398397;
     transition: $property $duration $easing $delay;
 }
 
-@mixin box_shadow($offset_x, $offset_y, $blur_radius, $color, $spread: 0) {
-    -webkit-box-shadow: $offset_x $offset_y $blur_radius $spread $color;
-    box-shadow: $offset_x $offset_y $blur_radius $spread $color;
-}
-
 @mixin at2x($image_name, $w: auto, $h: auto, $extention: '.png') {
   background-image: url('../../images/' + ($image_name + $extention));
   $x2img : $image_name + '@2x' + $extention;
