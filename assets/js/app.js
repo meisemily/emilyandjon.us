@@ -16,7 +16,7 @@ $(window).scroll(function () {
         $('nav a:last').addClass('active');
     } else {
         $('section').each(function(i) {
-            if ($(this).position().top <= windowScroll) {
+            if ($(this).position().top <= windowScroll + 150) {
                 $('nav a.active').removeClass('active');
                 $('nav a').eq(i).addClass('active');
             }
