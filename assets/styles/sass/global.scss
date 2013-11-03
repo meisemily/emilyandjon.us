@@ -1,5 +1,14 @@
 @import "_common.scss";
 
+// For testing
+#middle {
+    position: absolute;
+    height: 1px;
+    background-color: #ff0;
+    width: 100%;
+    z-index: 10000;
+}
+
 // ===========================================================================
 // Template
 // ===========================================================================
@@ -7,7 +16,7 @@
 body {
     background-color: #fff;
     color: #999;
-    font-size: 1.05em;
+    font-size: 1.08em;
     line-height: 1.45;
     font-family: helvetica, arial, sans-serif;
     -webkit-text-size-adjust: none;
@@ -36,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: $gray;
     font-weight: 900;
-    font-size: 6em;
-    line-height: 1;
+    font-size: 5.8em;
+    line-height: 1.1;
 }
 
 h2 {
     color: $burgundy;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 p + p {
@@ -59,6 +68,7 @@ p + p {
     padding: 15px 0;
     width: 100%;
     background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
     font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
     text-align: center;
     z-index: 100;
@@ -72,31 +82,33 @@ p + p {
     }
 
     a {
+        $nav_color: #a3bbc3;
+
         display: inline-block;
-        padding: 8px 14px;
-        color: $foam;
-        font-size: 1.12em;
+        padding: 5px 14px;
+        color: $nav_color;
+        font-size: 1.2em;
         text-transform: uppercase;
 
         &:hover {
-            color: darken($foam, 15%);
+            color: darken($nav_color, 15%);
         }
 
         &.active {
             color: #fff;
-            background-color: $foam;
+            background-color: $nav_color;
             border-radius: 3px;
         }
     }
 }
 
 #site_footer {
-    text-align: center;
     padding: 50px;
+    text-align: center;
 }
 
 #about {
-    padding: 120px 0 100px 0;
+    padding: 170px 0 135px 0;
     color: $foam;
     text-align: center;
     text-transform: uppercase;
@@ -108,7 +120,7 @@ p + p {
     }
 
     p {
-        font-size: 1.6em;
+        font-size: 1.7em;
     }
 }
 
@@ -121,30 +133,47 @@ p + p {
 }
 
 .content {
+    position: relative;
     padding: 30px;
-    width: 50%;
     background-color: #fff;
+    z-index: 2;
+
+    &.center {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    &.left {
+        float: left;
+        width: 40%;
+    }
+
+    &.right {
+        float: right;
+        width: 40%;
+    }
 }
 
 section {
-    padding: 100px 50px;
+    padding: 140px 50px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+
+    + section {
+        border-top: 2px solid #fff;
+    }
 }
 
 #wedding {
-    background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
     text-align: center;
 
-    .content {
-        margin: 0 auto;
-    }
-
-    $ring_size: 80px;
+    $ring_size: 72px;
 
     .ring_wrapper {
         position: relative;
-        margin: -20px auto 40px auto;
-        width: 150px;
-        height: 160px;
+        margin: -30px auto 40px auto;
+        width: 140px;
+        height: 140px;
     }
 
     .ring {
@@ -164,16 +193,9 @@ section {
 }
 
 #accomodations {
-    background-color: $foam;
 }
 
 #registries {
-    background-image: url('http://farm3.staticflickr.com/2849/9860205954_e8e358898f_k.jpg');
-    overflow: hidden;
-
-    .content {
-        float: right;
-    }
 }
 
 // ===========================================================================
@@ -198,6 +220,11 @@ section {
     }
 
     .content {
-        width: auto;
+        &.center,
+        &.left,
+        &.right {
+            float: none;
+            width: auto;
+        }
     }
 }
