@@ -7,7 +7,7 @@ $(document).ready(function(){
         });
     });
 
-    $('.parallax').parallax("50%", 0.4);
+    $('.parallax_bg').parallax("50%", 0.4);
     $('.ring').parallax("50%", 0.1);
 });
 

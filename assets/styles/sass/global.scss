@@ -7,6 +7,7 @@
     background-color: #ff0;
     width: 100%;
     z-index: 10000;
+    display: none;
 }
 
 // ===========================================================================
@@ -27,17 +28,31 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: darken($teal, 20%);
+        color: darken($teal, 14%);
+    }
+}
+
+.button {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 7px 12px;
+    font-weight: bold;
+    font-size: 0.8em;
+    border: 2px solid #ededed;
+    border-radius: 4px;
+
+    &:hover {
+        border-color: #e0e0e0;
     }
 }
 
 .brandon_grotesque {
+    text-transform: uppercase;
     font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
     @extend .brandon_grotesque;
-    text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -69,9 +84,9 @@ p + p {
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #e5e5e5;
-    font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
     text-align: center;
     z-index: 100;
+    @extend .brandon_grotesque;
 
     li {
         display: inline-block;
@@ -88,16 +103,15 @@ p + p {
         padding: 5px 14px;
         color: $nav_color;
         font-size: 1.2em;
-        text-transform: uppercase;
+        border-radius: 3px;
 
         &:hover {
-            color: darken($nav_color, 15%);
+            background-color: #f9f9f9;
         }
 
         &.active {
             color: #fff;
             background-color: $nav_color;
-            border-radius: 3px;
         }
     }
 }
@@ -111,8 +125,7 @@ p + p {
     padding: 170px 0 135px 0;
     color: $foam;
     text-align: center;
-    text-transform: uppercase;
-    background-color: transparent;
+    background-color: #fff;
     @extend .brandon_grotesque;
 
     h1 span {
@@ -128,39 +141,41 @@ p + p {
 // Sections
 // ===========================================================================
 
-.parallax {
+.parallax_bg {
     background-attachment: fixed;
 }
 
 .content {
     position: relative;
+    margin: 0 auto;
     padding: 30px;
+    max-width: 960px;
     background-color: #fff;
+    box-sizing: border-box;
     z-index: 2;
 
     &.center {
-        margin: 0 auto;
-        width: 50%;
+        width: 60%;
     }
 
     &.left {
         float: left;
-        width: 40%;
+        width: 45%;
     }
 
     &.right {
         float: right;
-        width: 40%;
+        width: 45%;
     }
 }
 
 section {
     padding: 140px 50px;
     overflow: hidden;
-    background-color: #f9f9f9;
+    background-color: #ededed;
 
     + section {
-        border-top: 2px solid #fff;
+        border-top: 1px solid #fff;
     }
 }
 
@@ -171,7 +186,7 @@ section {
 
     .ring_wrapper {
         position: relative;
-        margin: -30px auto 40px auto;
+        margin: -40px auto 40px auto;
         width: 140px;
         height: 140px;
     }
@@ -193,6 +208,16 @@ section {
 }
 
 #accomodations {
+    .content {
+        overflow: hidden;
+    }
+
+    .map {
+        float: right;
+        margin-left: 45px;
+        width: 45%;
+        height: 200px;
+    }
 }
 
 #registries {
@@ -202,7 +227,7 @@ section {
 // Media Queries
 // ===========================================================================
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
     #site_nav {
         display: none;
     }
@@ -211,7 +236,7 @@ section {
         padding: 50px 30px;
 
         h1 {
-            font-size: 70px;
+            font-size: 4.5em;
         }
     }
 
@@ -225,6 +250,12 @@ section {
         &.right {
             float: none;
             width: auto;
+        }
+    }
+
+    #accomodations {
+        .map {
+            display: none;
         }
     }
 }
