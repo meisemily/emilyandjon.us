@@ -61,6 +61,7 @@ p + p {
     background-color: #fff;
     font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
     text-align: center;
+    z-index: 100;
 
     li {
         display: inline-block;
@@ -140,11 +141,15 @@ section {
     $ring_size: 80px;
 
     .ring_wrapper {
-        margin: -22px auto 40px auto;
-        width: $ring_size * 2;
+        position: relative;
+        margin: -20px auto 40px auto;
+        width: 150px;
+        height: 160px;
     }
 
     .ring {
+        position: absolute;
+        left: 0;
         display: block;
         width: $ring_size;
         height: $ring_size;
@@ -152,8 +157,8 @@ section {
         border: 10px solid #fff;
 
         + .ring {
-            margin-top: -60px;
-            margin-left: 50px;
+            margin-top: $ring_size/1.5;
+            left: 40px;
         }
     }
 }

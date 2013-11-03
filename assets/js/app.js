@@ -1,10 +1,13 @@
 $(document).ready(function(){
     $('.scroll').click(function(event){
         event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+        $('html,body').animate({
+            scrollTop:$(this.hash).offset().top}, 500
+        );
     });
 
-    $('.parallax').stellar();
+    $('.parallax').parallax("50%", 0.3);
+    $('.ring').parallax("50%", 0.2);
 });
 
 $(window).scroll(function () {
