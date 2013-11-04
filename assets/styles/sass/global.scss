@@ -16,7 +16,7 @@
 
 body {
     background-color: #fff;
-    color: #999;
+    color: #888;
     font-size: 1.08em;
     line-height: 1.45;
     font-family: helvetica, arial, sans-serif;
@@ -155,6 +155,8 @@ p + p {
     z-index: 2;
 
     &.center {
+        font-size: 1.1em;
+        text-align: center;
         width: 60%;
     }
 
@@ -180,8 +182,6 @@ section {
 }
 
 #wedding {
-    text-align: center;
-
     $ring_size: 72px;
 
     .ring_wrapper {
@@ -250,6 +250,8 @@ section {
         &.right {
             float: none;
             width: auto;
+            text-align: left;
+            font-size: 1em;
         }
     }
 
