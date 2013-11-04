@@ -75,7 +75,7 @@ p + p {
 
 #container {
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: 1400px;
 }
 
 #site_nav {
@@ -83,7 +83,6 @@ p + p {
     padding: 15px 0;
     width: 100%;
     background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
     text-align: center;
     z-index: 100;
     @extend .brandon_grotesque;
@@ -102,7 +101,7 @@ p + p {
         display: inline-block;
         padding: 5px 14px;
         color: $nav_color;
-        font-size: 1.2em;
+        font-size: 1.1em;
         border-radius: 3px;
 
         &:hover {
@@ -147,13 +146,11 @@ p + p {
     position: relative;
     margin: 0 auto;
     padding: 30px;
-    max-width: 960px;
     background-color: #fff;
     box-sizing: border-box;
     z-index: 2;
 
     &.center {
-        font-size: 1.1em;
         text-align: center;
         width: 60%;
     }
@@ -170,7 +167,7 @@ p + p {
 }
 
 section {
-    padding: 140px 50px;
+    padding: 140px 90px;
     overflow: hidden;
     background-color: #ededed;
 
@@ -200,9 +197,9 @@ section {
 
     .ring_wrapper {
         position: relative;
-        margin: -40px auto 40px auto;
+        margin: -80px auto 40px auto;
         width: 140px;
-        height: 140px;
+        height: 160px;
     }
 
     .ring {
@@ -224,6 +221,7 @@ section {
 #accomodations {
     .content {
         overflow: hidden;
+        max-width: 960px;
     }
 
     .map {
@@ -234,7 +232,7 @@ section {
     }
 }
 
-#registries {
+#registry {
 }
 
 // ===========================================================================
@@ -265,7 +263,6 @@ section {
             float: none;
             width: auto;
             text-align: left;
-            font-size: 1em;
         }
     }
 
