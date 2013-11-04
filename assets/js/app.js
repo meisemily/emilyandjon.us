@@ -28,7 +28,7 @@ $(document).ready(function(){
     });
 
     $('.parallax_bg').parallax("50%", 0.3);
-    $('.ring').parallax("50%", 0.15);
+    $('.ring').parallax("50%", 0.1);
 });
 
 $(window).scroll(function () {
@@ -50,7 +50,7 @@ $(window).scroll(function () {
     if (started === 0) {
         $('nav a.active').removeClass('active');
         $('nav a:first').addClass('active');
-    } else if (fromBottom === 0) {
+    } else if (fromBottom < 1) {
           $('nav a.active').removeClass('active');
           $('nav a:last').addClass('active');
     } else {
