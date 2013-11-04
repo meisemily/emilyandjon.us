@@ -1,4 +1,17 @@
 var Ws = {
+    lastHash: "",
+    highlightSelected: function () {
+        var shouldBail = false;
+        $('section').each(function(i) {
+            var clickedID = ("#"+$(this).attr('id'));
+            if(clickedID === (Ws.lastHash)) {
+                $('nav a.active').removeClass('active');
+                $('nav a').eq(i).addClass('active');
+                shouldBail = true;
+                return false;
+            }
+        });
+    }
 };
 
 $(document).ready(function(){
@@ -8,10 +21,9 @@ $(document).ready(function(){
         $('html,body').animate({
             scrollTop: $(this.hash).offset().top - $('#site_nav').height(),
         }, 500, 'swing', function(){
-          Ws = {
-            lastHash: ""
-          };
+            Ws.lastHash =  "";
         });
+        Ws.highlightSelected();
     });
 
     $('.parallax_bg').parallax("50%", 0.4);
