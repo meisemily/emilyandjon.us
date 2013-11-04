@@ -121,28 +121,26 @@ p + p {
     text-align: center;
 }
 
-#about {
-    padding: 170px 0 135px 0;
-    color: $foam;
-    text-align: center;
-    background-color: #fff;
-    @extend .brandon_grotesque;
-
-    h1 span {
-        color: $burgundy;
-    }
-
-    p {
-        font-size: 1.7em;
-    }
-}
-
 // ===========================================================================
 // Sections
 // ===========================================================================
 
 .parallax_bg {
+    background-size: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.photo {
+    background-color: #fff;
+
+    &:after {
+        display: block;
+        padding: 200px 0;
+        content: '[picture]';
+        text-align: center;
+    }
 }
 
 .content {
@@ -178,6 +176,22 @@ section {
 
     + section {
         border-top: 1px solid #fff;
+    }
+}
+
+#about {
+    padding: 135px 0 95px 0;
+    color: $foam;
+    text-align: center;
+    background-color: #fff;
+    @extend .brandon_grotesque;
+
+    h1 span {
+        color: $burgundy;
+    }
+
+    p {
+        font-size: 1.7em;
     }
 }
 

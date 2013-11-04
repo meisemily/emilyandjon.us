@@ -7,8 +7,8 @@ $(document).ready(function(){
         });
     });
 
-    $('.parallax_bg').parallax("50%", 0.4);
-    $('.ring').parallax("50%", 0.1);
+    $('.parallax_bg').parallax("50%", 0.3);
+    $('.ring').parallax("50%", 0.15);
 });
 
 $(window).scroll(function () {
