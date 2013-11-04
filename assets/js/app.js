@@ -11,6 +11,7 @@ var Ws = {
                 return false;
             }
         });
+        return shouldBail;
     }
 };
 
@@ -34,15 +35,7 @@ $(window).scroll(function () {
     var shouldBail = false;
     // if doing this from a click, just select the clicked thing
     if(Ws.lastHash.length) {
-        $('section').each(function(i) {
-            var clickedID = ("#"+$(this).attr('id'));
-            if(clickedID === (Ws.lastHash)) {
-                $('nav a.active').removeClass('active');
-                $('nav a').eq(i).addClass('active');
-                shouldBail = true;
-                return false;
-            }
-        });
+        shouldBail = Ws.highlightSelected();
     }
     if(shouldBail) {
       return;
