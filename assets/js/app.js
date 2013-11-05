@@ -27,7 +27,7 @@ $(document).ready(function(){
         Ws.highlightSelected();
     });
 
-    $('.parallax_bg').parallax("50%", 0.3);
+    $('.parallax_bg').parallax("50%", 0.2);
     $('.ring').parallax("50%", 0.1);
 });
 

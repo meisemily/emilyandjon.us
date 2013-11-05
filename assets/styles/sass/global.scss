@@ -34,7 +34,7 @@ a {
 
 .button {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 10px;
     padding: 7px 12px;
     font-weight: bold;
     font-size: 0.8em;
@@ -129,21 +129,17 @@ p + p {
 // ===========================================================================
 
 .parallax_bg {
-    background-size: 100%;
-    background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .photo {
-    background-color: #fff;
-
-    &:after {
-        display: block;
-        padding: 200px 0;
-        content: '[picture]';
-        text-align: center;
-    }
+    height: 360px;
+    border: 5px solid #fff;
+    border-right: 0;
+    border-left: 0;
+    //background-attachment: fixed;
+    //background-size: 100%;
+    //background-position: center top;
 }
 
 .content {
@@ -221,11 +217,20 @@ section {
 }
 
 #accomodations {
+    .content {
+        padding-right: calc(47% + 30px);
+    }
+
     .map {
-        float: right;
-        margin-left: 45px;
-        width: 45%;
-        height: 200px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 42%;
+        height: calc(100% - 60px);
+    }
+
+    .button {
+        margin: 5px 0 20px 0;
     }
 }
 
@@ -264,8 +269,17 @@ section {
     }
 
     #accomodations {
+        .content {
+            padding-right: 30px;
+        }
+
         .map {
-            display: none;
+            position: static;
+            margin: 10px 0 30px 0;
+            top: auto;
+            right: auto;
+            width: 100%;
+            height: 200px;
         }
     }
 }
