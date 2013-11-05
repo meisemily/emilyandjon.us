@@ -69,6 +69,10 @@ h2 {
     font-size: 1.6em;
 }
 
+h3 {
+    color: $gray;
+}
+
 p + p {
     margin-top: 10px;
 }
@@ -146,8 +150,10 @@ p + p {
     position: relative;
     margin: 0 auto;
     padding: 30px;
+    max-width: 960px;
     background-color: #fff;
     box-sizing: border-box;
+    overflow: hidden;
     z-index: 2;
 
     &.center {
@@ -168,12 +174,8 @@ p + p {
 
 section {
     padding: 140px 90px;
-    overflow: hidden;
     background-color: #ededed;
-
-    + section {
-        border-top: 1px solid #fff;
-    }
+    overflow: hidden;
 }
 
 #about {
@@ -219,11 +221,6 @@ section {
 }
 
 #accomodations {
-    .content {
-        overflow: hidden;
-        max-width: 960px;
-    }
-
     .map {
         float: right;
         margin-left: 45px;
