@@ -1,4 +1,5 @@
 var google = google || {};
+var Modernizr = Modernizr || {};
 
 var Ws = {
     lastHash: "",
@@ -89,9 +90,10 @@ $(document).ready(function(){
         Ws.highlightSelected();
     });
 
-    // @todo: disable on touch devices.
-    $('.parallax_bg').parallax("50%", 0.2);
-    $('.ring').parallax("50%", 0.05);
+    if (!Modernizr.touch) {
+      $('.parallax_bg').parallax("50%", 0.2);
+      $('.ring').parallax("50%", 0.05);
+    }
 });
 
 $(window).scroll(function () {
