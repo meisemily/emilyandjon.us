@@ -85,17 +85,23 @@
 
   <script>
     function initialize() {
+      var homeLatlng = new google.maps.LatLng(40.70562,-73.972558);
+
       var mapOptions = {
         zoom: 13,
         scrollwheel: false,
         mapTypeControl: false,
-        center: new google.maps.LatLng(40.70562,-73.972558),
+        center: homeLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
       var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
       setMarkers(map, places);
+
+      google.maps.event.addDomListener(window, 'resize', function() {
+          map.setCenter(homeLatlng);
+      });
     }
 
     var goldStar = {
@@ -103,7 +109,7 @@
       fillColor: 'yellow',
       fillOpacity: 1,
       scale: 0.1,
-      strokeColor: '#C73C30',
+      strokeColor: '#c73c30',
       strokeWeight: 2
     };
 
