@@ -53,7 +53,7 @@ var Ws = {
 
       var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-      // @todo: Make retina
+      // @todo: make retina
       var goldStar = {
         path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
         fillColor: 'yellow',
@@ -106,9 +106,6 @@ $(window).scroll(function () {
     var started = $(window).scrollTop();
     var fromBottom = $(document).height() - ($(window).scrollTop() + $(window).height());
     var boundary = started  + $('#site_nav').height() + $('section').first().height();
-
-    // For testing
-    $('#middle').css({top: boundary});
 
     if (started === 0) {
         $('nav a.active').removeClass('active');
