@@ -119,14 +119,26 @@ p + p {
 // Sections
 // ===========================================================================
 
-/*.photo {
-    height: 500px;
-    background-attachment: fixed;
-    background-size: 100%;
+.photo {
+    height: 440px;
     background-position: center;
     background-repeat: no-repeat;
+
+    &.winery {
+        background-color: darken($foam, 8%);
+        background-image: url('../../images/photo_winery.jpg');
+    }
+
+    &.waterfront {
+        background-color: #d8e5e9;
+        background-image: url('../../images/photo_waterfront.jpg');
+    }
+
+    &.tbd {
+        background: #f8fbfc;
+    }
 }
-*/
+
 .content {
     position: relative;
     margin: 0 auto;
@@ -153,18 +165,23 @@ p + p {
 }
 
 section {
-    padding: 140px 90px;
+    padding: 80px 50px;
     overflow: hidden;
 }
 
 #about {
+    padding: 80px 0 520px 0;
     color: $foam;
     text-align: center;
-    background-color: #f8fbfc;
+    background: #f8fbfc url('../../images/photo_hero.jpg') center 480px no-repeat;
     @extend .brandon_grotesque;
 
-    h1 span {
-        color: $burgundy;
+    h1 {
+        margin-bottom: 0;
+
+        span {
+            color: $burgundy;
+        }
     }
 
     p {
@@ -172,10 +189,10 @@ section {
     }
 }
 
-$ring_size: 80px;
+$ring_size: 86px;
 .ring_wrapper {
     position: relative;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 10px auto;
     width: 140px;
     height: 150px;
 }
@@ -205,10 +222,6 @@ $ring_size: 80px;
 
     p {
         color: #dbe3e6;
-
-        a {
-            color: #fff;
-        }
     }
 }
 
