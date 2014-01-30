@@ -90,10 +90,10 @@ $(document).ready(function(){
         Ws.highlightSelected();
     });
 
-    if (!Modernizr.touch) {
-      $('.parallax_bg').parallax("50%", 0.2);
-      $('.ring').parallax("50%", 0.05);
-    }
+    //if (!Modernizr.touch) {
+      //$('.parallax_bg').parallax("50%", 0.1);
+      //$('.ring').parallax("50%", 0.05);
+    //}
 });
 
 $(window).scroll(function () {

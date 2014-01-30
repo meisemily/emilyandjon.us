@@ -118,18 +118,12 @@ p + p {
 // Sections
 // ===========================================================================
 
-.parallax_bg {
-    background-repeat: no-repeat;
-}
-
 .photo {
-    height: 360px;
-    border: 5px solid #fff;
-    border-right: 0;
-    border-left: 0;
+    height: 500px;
     //background-attachment: fixed;
-    //background-size: 100%;
-    //background-position: center top;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .content {
@@ -165,7 +159,7 @@ section {
 }
 
 #about {
-    padding: 135px 0 95px 0;
+    padding: 160px 0;
     color: $foam;
     text-align: center;
     background-color: #fff;
