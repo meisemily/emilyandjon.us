@@ -16,6 +16,10 @@ var Ws = {
         });
         return shouldBail;
     },
+    parallax: function() {
+      var scrolled = $(window).scrollTop();
+      $('.parallax').css('top', -(scrolled * 0.2) + 'px');
+    },
     initializeMaps: function()   {
 
       var setMarkers = function(map, locations) {
@@ -89,14 +93,13 @@ $(document).ready(function(){
         });
         Ws.highlightSelected();
     });
-
-    //if (!Modernizr.touch) {
-      //$('.parallax_bg').parallax("50%", 0.1);
-      //$('.ring').parallax("50%", 0.05);
-    //}
 });
 
 $(window).scroll(function () {
+    if (!Modernizr.touch) {
+      Ws.parallax();
+    }
+
     var shouldBail = false;
     // if doing this from a click, just select the clicked thing
     if(Ws.lastHash.length) {

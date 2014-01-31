@@ -120,14 +120,28 @@ p + p {
 // Sections
 // ===========================================================================
 
-.photo {
+.parallax_container {
+    position: relative;
     height: 440px;
-    background-position: center;
+    overflow: hidden;
+}
+
+.parallax {
+    position: absolute;
+    background-position: center -100%;
+    width: 100%;
+
+    &.photo {
+        margin-top: 180px; // Offset
+    }
+}
+
+.photo {
+    height: 100%;
+    background-position: center bottom;
     background-repeat: no-repeat;
 
     &.hero {
-        background-color: $sky;
-        background-position: center 480px;
         background-image: url('../../images/photo_hero.jpg');
     }
 
@@ -142,7 +156,8 @@ p + p {
     }
 
     &.tbd {
-        background: #f8fbfc;
+        background: $sky;
+        height: 400px;
     }
 }
 
@@ -177,9 +192,11 @@ section {
 }
 
 #about {
-    padding: 80px 0 520px 0;
+    position: relative;
+    padding: 200px 0 240px 0;
     color: $foam;
     text-align: center;
+    background-color: $sky;
     @extend .brandon_grotesque;
 
     h1 {
@@ -198,9 +215,10 @@ section {
 $ring_size: 86px;
 .ring_wrapper {
     position: relative;
-    margin: 0 auto 10px auto;
+    margin: -90px auto -35px auto;
     width: 140px;
     height: 150px;
+    z-index: 2;
 }
 
 .ring {
@@ -248,7 +266,7 @@ $ring_size: 86px;
 
 #accomodations {
     .content {
-        padding-right: calc(47% + 30px);
+        padding-right: calc(47% + 20px);
     }
 
     .map {
@@ -262,9 +280,6 @@ $ring_size: 86px;
     .button {
         margin: 5px 0 20px 0;
     }
-}
-
-#registry {
 }
 
 // ===========================================================================
