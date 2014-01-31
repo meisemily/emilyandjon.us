@@ -7,9 +7,10 @@
 body {
     background-color: #fff;
     color: #9b9fa2;
-    font-size: 1.08em;
-    line-height: 1.45;
-    font-family: helvetica, arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 200;
+    line-height: 1.44;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-text-size-adjust: none;
 }
 
@@ -100,7 +101,7 @@ p + p {
         border-radius: 3px;
 
         &:hover {
-            background-color: #f9f9f9;
+            background-color: $sky;
         }
 
         &.active {
@@ -123,6 +124,12 @@ p + p {
     height: 440px;
     background-position: center;
     background-repeat: no-repeat;
+
+    &.hero {
+        background-color: $sky;
+        background-position: center 480px;
+        background-image: url('../../images/photo_hero.jpg');
+    }
 
     &.winery {
         background-color: darken($foam, 8%);
@@ -165,7 +172,7 @@ p + p {
 }
 
 section {
-    padding: 80px 50px;
+    padding: 40px 50px;
     overflow: hidden;
 }
 
@@ -173,7 +180,6 @@ section {
     padding: 80px 0 520px 0;
     color: $foam;
     text-align: center;
-    background: #f8fbfc url('../../images/photo_hero.jpg') center 480px no-repeat;
     @extend .brandon_grotesque;
 
     h1 {
@@ -223,6 +229,21 @@ $ring_size: 86px;
     p {
         color: #dbe3e6;
     }
+
+    a {
+        color: #fff;
+        font-weight: 500;
+
+        &:hover {
+            color: transparentize(#fff, 0.2);
+        }
+
+        &.button {
+            &:hover {
+                border-color: transparentize(#fff, 0.5);
+            }
+        }
+    }
 }
 
 #accomodations {
@@ -249,6 +270,12 @@ $ring_size: 86px;
 // ===========================================================================
 // Media Queries
 // ===========================================================================
+
+@media screen and (min-width: 1200px) {
+    .photo {
+        background-size: 100%;
+    }
+}
 
 @media screen and (max-width: 800px) {
     #site_nav {

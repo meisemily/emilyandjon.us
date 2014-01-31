@@ -1,6 +1,7 @@
 // ===========================================================================
 // Variables
 // ===========================================================================
+$sky: #f8fbfc;
 $foam: #94b2b9;
 $burgundy: #B67879;
 $gray: #475059;
@@ -9,12 +10,6 @@ $teal: #398397;
 // ===========================================================================
 // Mixins
 // ===========================================================================
-
-@mixin simple_transition($duration: 0.08s, $property: all, $easing: ease-out, $delay: 0s) {
-    -ms-transition: $property $duration $easing $delay;
-    -webkit-transition: $property $duration $easing $delay;
-    transition: $property $duration $easing $delay;
-}
 
 @mixin at2x($image_name, $w: auto, $h: auto, $extention: '.png') {
   background-image: url('../../images/' + ($image_name + $extention));
