@@ -26,7 +26,7 @@ var Ws = {
       $('.parallax').css('top', -(scrolled * 0.2) + 'px');
 
     },
-    initializeMaps: function()   {
+    initializeMaps: function() {
 
       var setMarkers = function(map, locations) {
         var infowindow = new google.maps.InfoWindow();
@@ -106,7 +106,7 @@ $(document).ready(function(){
 
 $(window).scroll(function () {
     if (!Modernizr.touch) {
-      //Ws.parallax();
+      Ws.parallax();
     }
 
     var shouldBail = false;
