@@ -4,7 +4,9 @@ var Modernizr = Modernizr || {};
 var Ws = {
     lastHash: "",
     highlightSelected: function () {
+
         var shouldBail = false;
+
         $('section').each(function(i) {
             var clickedID = ("#"+$(this).attr('id'));
             if(clickedID === (Ws.lastHash)) {
@@ -14,11 +16,15 @@ var Ws = {
                 return false;
             }
         });
+
         return shouldBail;
     },
     parallax: function() {
+
+      // @todo: add Delay and data-speed
       var scrolled = $(window).scrollTop();
       $('.parallax').css('top', -(scrolled * 0.2) + 'px');
+
     },
     initializeMaps: function()   {
 
@@ -84,20 +90,23 @@ var Ws = {
 
 $(document).ready(function(){
     $('.scroll').click(function(event){
+
         event.preventDefault();
         Ws.lastHash = this.hash;
+
         $('html,body').animate({
             scrollTop: $(this.hash).offset().top - $('#site_nav').height(),
         }, 500, 'swing', function(){
             Ws.lastHash =  "";
         });
+
         Ws.highlightSelected();
     });
 });
 
 $(window).scroll(function () {
     if (!Modernizr.touch) {
-      Ws.parallax();
+      //Ws.parallax();
     }
 
     var shouldBail = false;

@@ -9,7 +9,7 @@ body {
     color: #9b9fa2;
     font-size: 1.1em;
     font-weight: 200;
-    line-height: 1.44;
+    line-height: 1.46;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-text-size-adjust: none;
 }
@@ -51,13 +51,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: $gray;
     font-weight: 900;
-    font-size: 5.8em;
+    font-size: 5.6em;
     line-height: 1.1;
 }
 
 h2 {
     color: $burgundy;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 h3 {
@@ -70,7 +70,6 @@ p + p {
 
 #container {
     margin: 0 auto;
-    max-width: 1400px;
 }
 
 #site_nav {
@@ -117,7 +116,7 @@ p + p {
 }
 
 // ===========================================================================
-// Sections
+// Parallax Elements
 // ===========================================================================
 
 .parallax_container {
@@ -128,22 +127,20 @@ p + p {
 
 .parallax {
     position: absolute;
-    background-position: center -100%;
-    width: 100%;
-
-    &.photo {
-        margin-top: 180px; // Offset
-    }
+    top: 0;
+    height: 100%;
 }
 
 .photo {
-    height: 100%;
-    background-position: center bottom;
+    width: 100%;
     background-repeat: no-repeat;
+    background-position: center;
 
+    /*
     &.hero {
         background-image: url('../../images/photo_hero.jpg');
     }
+    */
 
     &.winery {
         background-color: darken($foam, 8%);
@@ -158,57 +155,6 @@ p + p {
     &.tbd {
         background: $sky;
         height: 400px;
-    }
-}
-
-.content {
-    position: relative;
-    margin: 0 auto;
-    padding: 30px;
-    max-width: 960px;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 2;
-
-    &.center {
-        text-align: center;
-        width: 60%;
-    }
-
-    &.left {
-        float: left;
-        width: 45%;
-    }
-
-    &.right {
-        float: right;
-        width: 45%;
-    }
-}
-
-section {
-    padding: 40px 50px;
-    overflow: hidden;
-}
-
-#about {
-    position: relative;
-    padding: 200px 0 240px 0;
-    color: $foam;
-    text-align: center;
-    background-color: $sky;
-    @extend .brandon_grotesque;
-
-    h1 {
-        margin-bottom: 0;
-
-        span {
-            color: $burgundy;
-        }
-    }
-
-    p {
-        font-size: 1.7em;
     }
 }
 
@@ -236,12 +182,69 @@ $ring_size: 86px;
     }
 }
 
+// ===========================================================================
+// Sections
+// ===========================================================================
+
+.content {
+    position: relative;
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 960px;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 2;
+
+    &.center {
+        font-size: 1.1em;
+        text-align: center;
+        width: 60%;
+    }
+
+    &.left {
+        float: left;
+        width: 45%;
+    }
+
+    &.right {
+        float: right;
+        width: 45%;
+    }
+}
+
+section {
+    padding: 50px;
+    overflow: hidden;
+}
+
+#about {
+    position: relative;
+    padding: 200px 0 440px 0;
+    height: auto;
+    color: $foam;
+    text-align: center;
+    background-color: $sky;
+    @extend .brandon_grotesque;
+
+    h1 {
+        margin-bottom: 0;
+
+        span {
+            color: $burgundy;
+        }
+    }
+
+    p {
+        font-size: 1.7em;
+    }
+}
+
 #wedding {
     background-color: $foam;
 
     h2 {
         color: #fff;
-        font-size: 2.4em;
+        font-size: 2em;
     }
 
     p {
@@ -266,7 +269,7 @@ $ring_size: 86px;
 
 #accomodations {
     .content {
-        padding-right: calc(47% + 20px);
+        padding-right: calc(47% + 30px);
     }
 
     .map {
@@ -292,6 +295,7 @@ $ring_size: 86px;
     }
 }
 
+/*
 @media screen and (max-width: 800px) {
     #site_nav {
         display: none;
@@ -341,3 +345,4 @@ $ring_size: 86px;
         font-size: 0.9em;
     }
 }
+*/
