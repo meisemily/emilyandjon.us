@@ -32,16 +32,13 @@ var Ws = {
           var bounds = element.offset();
           bounds.right = bounds.left + element.outerWidth();
           bounds.bottom = bounds.top + element.outerHeight();
-          return (!(viewport.right < bounds.left || viewport.left > bounds.right 
-            || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+          return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
     },
     parallax: function() {
-
-      // @todo: add Delay and data-speed
       $.each($('.parallax'), function (i, el) {
         var scrollTop = $(window).scrollTop();
         if(Ws.checkVisible($(el))) {
-          var pxToBump = ($(el).offset().top - scrollTop) * .4
+          var pxToBump = ($(el).offset().top - scrollTop) * 0.4;
           if(pxToBump < 0) {
             $(el).css('top',  pxToBump + 'px');
           } else {

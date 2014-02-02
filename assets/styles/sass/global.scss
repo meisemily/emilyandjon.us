@@ -162,7 +162,8 @@ p + p {
 $ring_size: 86px;
 .ring_wrapper {
     position: relative;
-    margin: -90px auto -35px auto;
+    top: -80px;
+    margin: 0 auto -80px auto;
     width: 140px;
     height: 150px;
     z-index: 2;
