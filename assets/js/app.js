@@ -37,14 +37,9 @@ var Ws = {
     parallax: function() {
       $.each($('.parallax'), function (i, el) {
         var scrollTop = $(window).scrollTop();
-        if(Ws.checkVisible($(el))) {
-          var pxToBump = ($(el).offset().top - scrollTop) * 0.4;
-          if(pxToBump < 0) {
-            $(el).css('top',  pxToBump + 'px');
-          } else {
-            $(el).css('top',  '-' + pxToBump + 'px');
-          }
-        } else {
+        if (Ws.checkVisible($(el))) {
+          var pxToBump = -($(el).offset().top - scrollTop) * 0.4;
+          $(el).css('top',  pxToBump + 'px');
         }
       });
 
