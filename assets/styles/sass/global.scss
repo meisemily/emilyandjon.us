@@ -137,11 +137,10 @@ p + p {
     background-repeat: no-repeat;
     background-position: center;
 
-    /*
     &.hero {
+        margin-top: 500px;
         background-image: url('../../images/photo_hero.jpg');
     }
-    */
 
     &.winery {
         background-color: darken($foam, 8%);
@@ -162,7 +161,7 @@ p + p {
 $ring_size: 86px;
 .ring_wrapper {
     position: relative;
-    margin: 0 auto -80px auto;
+    margin: -30px auto -90px auto;
     width: 140px;
     height: 150px;
     z-index: 2;
@@ -220,7 +219,7 @@ section {
 
 #about {
     position: relative;
-    padding: 200px 0 440px 0;
+    padding: 180px 0 700px 0;
     height: auto;
     color: $foam;
     text-align: center;
