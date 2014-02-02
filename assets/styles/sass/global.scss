@@ -268,16 +268,17 @@ section {
 }
 
 #accomodations {
-    .content {
-        padding-right: calc(47% + 30px);
+    .wrapper {
+        position: relative;
+        padding-right: calc(42% + 30px);
     }
 
     .map {
         position: absolute;
-        top: 30px;
-        right: 30px;
+        top: 0;
+        right: 0;
         width: 42%;
-        height: calc(100% - 60px);
+        height: 100%;
     }
 
     .button {
