@@ -19,11 +19,37 @@ var Ws = {
 
         return shouldBail;
     },
+    // lifted from http://upshots.org/javascript/jquery-test-if-element-is-in-viewport-visible-on-screen
+    checkVisible: function(element) {
+          var win = $(window);
+          var viewport = {
+              top : win.scrollTop(),
+              left : win.scrollLeft()
+          };
+          viewport.right = viewport.left + win.width();
+          viewport.bottom = viewport.top + win.height();
+           
+          var bounds = element.offset();
+          bounds.right = bounds.left + element.outerWidth();
+          bounds.bottom = bounds.top + element.outerHeight();
+          return (!(viewport.right < bounds.left || viewport.left > bounds.right 
+            || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    },
     parallax: function() {
 
       // @todo: add Delay and data-speed
-      var scrolled = $(window).scrollTop();
-      $('.parallax').css('top', -(scrolled * 0.2) + 'px');
+      $.each($('.parallax'), function (i, el) {
+        var scrollTop = $(window).scrollTop();
+        if(Ws.checkVisible($(el))) {
+          var pxToBump = ($(el).offset().top - scrollTop) * .4
+          if(pxToBump < 0) {
+            $(el).css('top',  pxToBump + 'px');
+          } else {
+            $(el).css('top',  '-' + pxToBump + 'px');
+          }
+        } else {
+        }
+      });
 
     },
     initializeMaps: function() {
