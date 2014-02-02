@@ -53,7 +53,7 @@ h1 {
     color: $gray;
     font-weight: 900;
     font-size: 5.6em;
-    line-height: 1.1;
+    line-height: 1.05;
 }
 
 h2 {
@@ -244,7 +244,6 @@ section {
 
     h2 {
         color: #fff;
-        font-size: 2em;
     }
 
     p {
@@ -295,22 +294,17 @@ section {
     }
 }
 
-/*
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
     #site_nav {
         display: none;
     }
 
-    #about {
-        padding: 45px 30px;
-
-        h1 {
-            font-size: 4.5em;
-        }
-    }
-
     section {
-        padding: 50px;
+        padding: 30px;
+
+        h2 {
+            font-size: 1.6em;
+        }
     }
 
     .content {
@@ -320,19 +314,23 @@ section {
             float: none;
             width: auto;
             text-align: left;
+            font-size: 1.1em;
         }
     }
 
+    #about {
+        font-size: 0.9em;
+        padding: 45px 30px;
+    }
+
     #accomodations {
-        .content {
-            padding-right: 30px;
+        .wrapper {
+            padding: 0;
         }
 
         .map {
             position: static;
-            margin: 10px 0 30px 0;
-            top: auto;
-            right: auto;
+            margin: 30px 0 0 0;
             width: 100%;
             height: 200px;
         }
@@ -345,4 +343,3 @@ section {
         font-size: 0.9em;
     }
 }
-*/
