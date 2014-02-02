@@ -69,8 +69,10 @@ var Ws = {
     parallax: function() {
       $.each($('.parallax'), function (i, el) {
         var scrollTop = $(window).scrollTop();
+        var speed = $(el).data('speed');
+
         if (Ws.checkVisible($(el))) {
-          var pxToBump = -($(el).offset().top - scrollTop) * 0.4;
+          var pxToBump = -($(el).offset().top - scrollTop) * speed;
           $(el).css('top',  pxToBump + 'px');
         }
       });
@@ -139,7 +141,7 @@ var Ws = {
 };
 
 $(document).ready(function(){
-  $(window).scroll(Ws.handleScroll);
+  $(window).scroll(Ws.handleScroll).scroll();
   Ws.initializeMaps();
   $('.scroll').click(function(event){
       event.preventDefault();
