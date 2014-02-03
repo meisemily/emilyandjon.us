@@ -134,7 +134,7 @@ p + p {
 
 .parallax {
     position: absolute;
-    top: 0;
+    bottom: 0;
 }
 
 .photo {
@@ -143,9 +143,9 @@ p + p {
     background-position: center;
 
     &.hero {
-        margin-top: 560px;
         background-image: url('../../images/photo_hero.jpg');
         height: 700px;
+        bottom: 138.90px; // Feels bad
     }
 
     &.winery {
@@ -160,10 +160,12 @@ p + p {
         height: 700px;
     }
 
+    /*
     &.domino {
         background-image: url('../../images/photo_domino.jpg');
         height: 590px;
     }
+    */
 
     &.tbd {
         background-color: $sky;
@@ -175,6 +177,7 @@ $ring_size: 82px;
 .ring_wrapper {
     position: relative;
     margin: -50px auto;
+    bottom: 19.97px; // Feels bad
     width: 140px;
     height: 140px;
     z-index: 2;
@@ -234,7 +237,6 @@ section {
     position: relative;
     padding: 180px 0 700px 0;
     height: auto;
-    color: $foam;
     text-align: center;
     background-color: $sky;
     @extend .brandon_grotesque;
@@ -248,7 +250,12 @@ section {
     }
 
     p {
-        font-size: 1.6em;
+        display: inline-block;
+        padding: 5px 13px;
+        color: darken($foam, 5%);
+        font-size: 1.7em;
+        background-color: transparentize($sky, 0.4);
+        border-radius: 4px;
     }
 }
 
