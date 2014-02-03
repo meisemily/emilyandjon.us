@@ -82,11 +82,7 @@ var Ws = {
       $.each($('.parallax'), function (i, el) {
         var scrollTop = $(window).scrollTop();
         var speed = $(el).data('speed');
-        var marginTop = parseInt($(el).css('margin-top'));
-        var distanceFromViewportTopToEl = scrollTop - $(el).offset().top;
-        console.log("from top to " + $(el).attr('class') + " " + distanceFromViewportTopToEl);
-        console.log($(el).attr('class') + " topmargin" + marginTop);
-        if (Ws.checkVisible($(el)) && Math.abs(scrollTop) > marginTop) {
+        if (Ws.checkVisible($(el))) {
           var pxToBump = -($(el).offset().top - scrollTop) * speed;
           $(el).css('top',  pxToBump + 'px');
         }
@@ -156,6 +152,7 @@ var Ws = {
 };
 
 $(document).ready(function(){
+  $(window).scroll(Ws.handleScroll).scroll();
   Ws.initializeMaps();
   $('.scroll').click(function(event){
       event.preventDefault();
@@ -168,8 +165,6 @@ $(document).ready(function(){
       });
       Ws.highlightSelected();
   });
-
-  $(window).scroll(Ws.handleScroll).scroll();
 });
 
 
