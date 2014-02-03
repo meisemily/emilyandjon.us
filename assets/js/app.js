@@ -6,6 +6,18 @@ var Ws = {
     handleScroll: function () {
       if (!Modernizr.touch) {
         Ws.parallax();
+
+        $('.fade_in').each( function(i, element){
+          if(Ws.checkVisible($(element))) {
+            $(element).animate({'opacity':'1'},500);
+          }
+        });
+
+        $('.move_up').each( function(i, element){
+          if(Ws.checkVisible($(element))) {
+            $(element).animate({'margin-top':'-60px'},500);
+          }
+        });
       }
 
       var shouldBail = false;

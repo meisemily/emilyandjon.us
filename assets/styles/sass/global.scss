@@ -117,8 +117,12 @@ p + p {
 }
 
 // ===========================================================================
-// Parallax Elements
+// Parallax / Fading Elements
 // ===========================================================================
+
+.fade_in {
+    opacity: 0;
+}
 
 .parallax_container {
     position: relative;
@@ -161,7 +165,7 @@ p + p {
 $ring_size: 86px;
 .ring_wrapper {
     position: relative;
-    margin: -45px auto -55px auto;
+    margin: -50px auto;
     width: 140px;
     height: 150px;
     z-index: 2;
@@ -235,7 +239,7 @@ section {
     }
 
     p {
-        font-size: 1.7em;
+        font-size: 1.6em;
     }
 }
 
