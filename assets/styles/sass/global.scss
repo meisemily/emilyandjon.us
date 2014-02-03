@@ -5,7 +5,7 @@
 // ===========================================================================
 
 body {
-    background-color: #fff;
+    background-color: darken($sky, 5%);
     color: #9b9fa2;
     font-size: 1.1em;
     font-weight: 200;
@@ -53,7 +53,7 @@ h1 {
     color: $gray;
     font-weight: 900;
     font-size: 5.5em;
-    line-height: 1;
+    line-height: 0.9;
 }
 
 h2 {
@@ -72,6 +72,7 @@ p + p {
 #container {
     margin: 0 auto;
     max-width: 1300px;
+    background-color: #fff;
 }
 
 #site_nav {
@@ -144,8 +145,8 @@ p + p {
     background-position: center;
 
     &.hero {
-        margin-top: 460px; // Feels bad
-        top: -153.21875px; // Feels bad
+        margin-top: 560px; // Feels bad
+        top: -186.5703125px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
         height: 700px;
     }
@@ -160,11 +161,6 @@ p + p {
         background-color: #d8e5e9;
         background-image: url('../../images/photo_waterfront.jpg');
         height: 700px;
-    }
-
-    &.domino {
-        background-image: url('../../images/photo_domino.jpg');
-        height: 590px;
     }
 
     &.tbd {
@@ -249,12 +245,8 @@ section {
     }
 
     p {
-        display: inline-block;
-        padding: 8px 18px;
         color: darken($foam, 5%);
         font-size: 1.7em;
-        background-color: transparentize($sky, 0.6);
-        border-radius: 5px;
     }
 }
 
@@ -343,7 +335,7 @@ section {
 
     #about {
         font-size: 0.9em;
-        padding: 45px 30px 30px 30px;
+        padding: 45px 0;
         height: auto;
 
         .ring_wrapper {
