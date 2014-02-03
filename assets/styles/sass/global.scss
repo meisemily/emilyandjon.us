@@ -52,8 +52,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: $gray;
     font-weight: 900;
-    font-size: 5.6em;
-    line-height: 1.05;
+    font-size: 5.5em;
+    line-height: 1;
 }
 
 h2 {
@@ -112,8 +112,10 @@ p + p {
 }
 
 #site_footer {
-    padding: 50px;
-    text-align: center;
+    p {
+        padding: 50px 0;
+        text-align: center;
+    }
 }
 
 // ===========================================================================
@@ -133,7 +135,6 @@ p + p {
 .parallax {
     position: absolute;
     top: 0;
-    height: 700px;
 }
 
 .photo {
@@ -144,30 +145,38 @@ p + p {
     &.hero {
         margin-top: 560px;
         background-image: url('../../images/photo_hero.jpg');
+        height: 700px;
     }
 
     &.winery {
-        background-color: darken($foam, 8%);
+        background-color: #748e96;
         background-image: url('../../images/photo_winery.jpg');
+        height: 700px;
     }
 
     &.waterfront {
         background-color: #d8e5e9;
         background-image: url('../../images/photo_waterfront.jpg');
+        height: 700px;
+    }
+
+    &.domino {
+        background-image: url('../../images/photo_domino.jpg');
+        height: 590px;
     }
 
     &.tbd {
-        background: $sky;
-        height: 400px;
+        background-color: $sky;
+        height: 700px;
     }
 }
 
-$ring_size: 86px;
+$ring_size: 82px;
 .ring_wrapper {
     position: relative;
     margin: -50px auto;
     width: 140px;
-    height: 150px;
+    height: 140px;
     z-index: 2;
 }
 
@@ -178,7 +187,7 @@ $ring_size: 86px;
     width: $ring_size;
     height: $ring_size;
     border-radius: $ring_size;
-    border: 10px solid #d8e5e9;
+    border: 9px solid #d8e5e9;
 
     + .ring {
         margin-top: $ring_size/2;
@@ -202,7 +211,7 @@ $ring_size: 86px;
     &.center {
         font-size: 1.1em;
         text-align: center;
-        width: 60%;
+        width: 65%;
     }
 
     &.left {
