@@ -83,8 +83,8 @@ var Ws = {
         var scrollTop = $(window).scrollTop();
         var speed = $(el).data('speed');
         if (Ws.checkVisible($(el))) {
-          var pxToBump = ($(el).offset().top - scrollTop) * speed;
-          $(el).css('bottom',  pxToBump + 'px');
+          var pxToBump = -($(el).offset().top - scrollTop) * speed;
+          $(el).css('top',  pxToBump + 'px');
         }
       });
 

@@ -71,6 +71,7 @@ p + p {
 
 #container {
     margin: 0 auto;
+    max-width: 1300px;
 }
 
 #site_nav {
@@ -134,7 +135,7 @@ p + p {
 
 .parallax {
     position: absolute;
-    bottom: 0;
+    top: 0;
 }
 
 .photo {
@@ -143,9 +144,10 @@ p + p {
     background-position: center;
 
     &.hero {
+        margin-top: 460px; // Feels bad
+        top: -153.21875px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
         height: 700px;
-        bottom: 138.90px; // Feels bad
     }
 
     &.winery {
@@ -160,12 +162,10 @@ p + p {
         height: 700px;
     }
 
-    /*
     &.domino {
         background-image: url('../../images/photo_domino.jpg');
         height: 590px;
     }
-    */
 
     &.tbd {
         background-color: $sky;
@@ -177,7 +177,6 @@ $ring_size: 82px;
 .ring_wrapper {
     position: relative;
     margin: -50px auto;
-    bottom: 19.97px; // Feels bad
     width: 140px;
     height: 140px;
     z-index: 2;
@@ -235,8 +234,8 @@ section {
 
 #about {
     position: relative;
-    padding: 180px 0 700px 0;
-    height: auto;
+    padding: 180px 0 780px 0;
+    height: 0;
     text-align: center;
     background-color: $sky;
     @extend .brandon_grotesque;
@@ -251,11 +250,11 @@ section {
 
     p {
         display: inline-block;
-        padding: 5px 13px;
+        padding: 8px 18px;
         color: darken($foam, 5%);
         font-size: 1.7em;
-        background-color: transparentize($sky, 0.4);
-        border-radius: 4px;
+        background-color: transparentize($sky, 0.6);
+        border-radius: 5px;
     }
 }
 
@@ -320,7 +319,7 @@ section {
     }
 
     section {
-        padding: 30px;
+        padding: 50px 30px;
 
         h2 {
             font-size: 1.6em;
@@ -338,9 +337,26 @@ section {
         }
     }
 
+    .move_up {
+        margin-top: 0 !important;
+    }
+
     #about {
         font-size: 0.9em;
-        padding: 45px 30px;
+        padding: 45px 30px 30px 30px;
+        height: auto;
+
+        .ring_wrapper {
+            margin: 0 auto -25px auto;
+        }
+
+        .fade_in {
+            opacity: 1;
+        }
+
+        .photo {
+            display: none;
+        }
     }
 
     #accomodations {
