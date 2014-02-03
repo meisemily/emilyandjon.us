@@ -86,7 +86,7 @@ var Ws = {
         var distanceFromViewportTopToEl = scrollTop - $(el).offset().top;
         console.log("from top to " + $(el).attr('class') + " " + distanceFromViewportTopToEl);
         console.log($(el).attr('class') + " topmargin" + marginTop);
-        if (Ws.checkVisible($(el)) && scrollTop > marginTop) {
+        if (Ws.checkVisible($(el)) && Math.abs(scrollTop) > marginTop) {
           var pxToBump = -($(el).offset().top - scrollTop) * speed;
           $(el).css('top',  pxToBump + 'px');
         }
