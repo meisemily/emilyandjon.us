@@ -4,6 +4,10 @@
 // Template
 // ===========================================================================
 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 body {
     background-color: darken($sky, 5%);
     color: #9b9fa2;
@@ -164,26 +168,29 @@ p + p {
 }
 
 $ring_size: 82px;
-.ring_wrapper {
-    position: relative;
-    margin: -50px auto;
-    width: 140px;
-    height: 140px;
-    z-index: 2;
-}
+// Modernizr
+.borderradius {
+    .ring_wrapper {
+        position: relative;
+        margin: -50px auto;
+        width: 140px;
+        height: 140px;
+        z-index: 2;
+    }
 
-.ring {
-    position: absolute;
-    left: 0;
-    display: block;
-    width: $ring_size;
-    height: $ring_size;
-    border-radius: $ring_size;
-    border: 9px solid #d8e5e9;
+    .ring {
+        position: absolute;
+        left: 0;
+        display: block;
+        width: $ring_size;
+        height: $ring_size;
+        border-radius: $ring_size;
+        border: 9px solid #d8e5e9;
 
-    + .ring {
-        margin-top: $ring_size/2;
-        left: 45px;
+        + .ring {
+            margin-top: $ring_size/2;
+            left: 45px;
+        }
     }
 }
 

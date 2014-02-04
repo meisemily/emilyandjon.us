@@ -7,6 +7,7 @@ var Ws = {
       if (!Modernizr.touch) {
         Ws.parallax();
       }
+
       $('.fade_in').each( function(i, element){
         if(Ws.checkVisible($(element))) {
           $(element).delay(100).animate({'opacity':'1'}, 500);
