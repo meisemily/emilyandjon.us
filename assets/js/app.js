@@ -6,18 +6,6 @@ var Ws = {
     handleScroll: function () {
       if (!Modernizr.touch) {
         Ws.parallax();
-
-        $('.fade_in').each( function(i, element){
-          if(Ws.checkVisible($(element))) {
-            $(element).animate({'opacity':'1'},500);
-          }
-        });
-
-        $('.move_up').each( function(i, element){
-          if(Ws.checkVisible($(element))) {
-            $(element).animate({'margin-top':'-60px'},500);
-          }
-        });
       }
 
       var shouldBail = false;
@@ -154,6 +142,19 @@ var Ws = {
 $(document).ready(function(){
   $(window).scroll(Ws.handleScroll).scroll();
   Ws.initializeMaps();
+
+  $('.fade_in').each( function(i, element){
+    if(Ws.checkVisible($(element))) {
+      $(element).animate({'opacity':'1'},500);
+    }
+  });
+
+  $('.move_up').each( function(i, element){
+    if(Ws.checkVisible($(element))) {
+      $(element).animate({'margin-top':'-60px'},500);
+    }
+  });
+
   $('.scroll').click(function(event){
       event.preventDefault();
       Ws.lastHash = this.hash;
