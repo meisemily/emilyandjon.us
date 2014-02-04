@@ -8,7 +8,7 @@ body {
     background-color: darken($sky, 5%);
     color: #9b9fa2;
     font-size: 1.1em;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.46;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-text-size-adjust: none;
@@ -113,13 +113,6 @@ p + p {
     }
 }
 
-#site_footer {
-    p {
-        padding: 50px 0;
-        text-align: center;
-    }
-}
-
 // ===========================================================================
 // Parallax / Fading Elements
 // ===========================================================================
@@ -143,29 +136,27 @@ p + p {
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    height: 700px;
 
     &.hero {
         margin-top: 530px; // Feels bad
         top: -176.5703125px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
-        height: 700px;
     }
 
     &.winery {
         background-color: #748e96;
         background-image: url('../../images/photo_winery.jpg');
-        height: 700px;
     }
 
     &.waterfront {
         background-color: #d8e5e9;
         background-image: url('../../images/photo_waterfront.jpg');
-        height: 700px;
     }
 
-    &.tbd {
-        background-color: $sky;
-        height: 700px;
+    &.nye {
+        background-color: #a49191;
+        background-image: url('../../images/photo_nye.jpg');
     }
 }
 
@@ -223,7 +214,8 @@ $ring_size: 82px;
     }
 }
 
-section {
+section,
+footer {
     padding: 50px;
     overflow: hidden;
 }
@@ -301,16 +293,30 @@ section {
 
 @media screen and (min-width: 1200px) {
     .photo {
-        background-size: 100%;
+        background-size: cover;
     }
 }
 
 @media screen and (max-width: 860px) {
+    .move_up {
+        margin-top: 0 !important; // Feels bad
+    }
+
+    .parallax_container {
+        height: 340px;
+    }
+
+    .photo {
+        background-size: cover;
+        height: 400px;
+    }
+
     #site_nav {
         display: none;
     }
 
-    section {
+    section,
+    footer {
         padding: 50px 30px;
 
         h2 {
@@ -329,10 +335,6 @@ section {
         }
     }
 
-    .move_up {
-        margin-top: 0 !important;
-    }
-
     #about {
         font-size: 0.9em;
         padding: 45px 0;
@@ -340,10 +342,6 @@ section {
 
         .ring_wrapper {
             margin: 0 auto -25px auto;
-        }
-
-        .fade_in {
-            opacity: 1;
         }
 
         .photo {
@@ -366,8 +364,16 @@ section {
 }
 
 @media screen and (max-width: 320px) {
-    section {
-        padding: 10px;
-        font-size: 0.9em;
+    .parallax_container {
+        height: 300px;
+    }
+
+    .photo {
+        height: 300px;
+    }
+
+    section,
+    footer {
+        padding: 10px 0;
     }
 }
