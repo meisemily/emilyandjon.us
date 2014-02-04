@@ -7,6 +7,11 @@ var Ws = {
       if (!Modernizr.touch) {
         Ws.parallax();
       }
+      $('.fade_in').each( function(i, element){
+        if(Ws.checkVisible($(element))) {
+          $(element).delay(100).animate({'opacity':'1'}, 500);
+        }
+      });
 
       var shouldBail = false;
       // if doing this from a click, just select the clicked thing
@@ -144,10 +149,8 @@ $(document).ready(function(){
   $(window).resize(Ws.handleScroll);
   Ws.initializeMaps();
 
-  $('.fade_in').each( function(i, element){
-    if(Ws.checkVisible($(element))) {
-      $(element).animate({'opacity':'1'},500);
-    }
+  $('.fade_in_always').each( function(i, element){
+    $(element).animate({'opacity':'1'},500);
   });
 
   $('.move_up').each( function(i, element){
