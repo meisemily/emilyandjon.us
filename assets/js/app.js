@@ -141,6 +141,7 @@ var Ws = {
 
 $(document).ready(function(){
   $(window).scroll(Ws.handleScroll).scroll();
+  $(window).resize(Ws.handleScroll);
   Ws.initializeMaps();
 
   $('.fade_in').each( function(i, element){
