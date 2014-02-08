@@ -79,9 +79,10 @@ hr {
     border-top: 1px solid $hr_color;
 }
 
+$container_max_width: 1300px;
 #container {
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: $container_max_width;
     background-color: #fff;
 }
 
@@ -89,6 +90,7 @@ hr {
     position: fixed;
     padding: 15px 0;
     width: 100%;
+    max-width: $container_max_width;
     background-color: #fff;
     border-bottom: 1px solid $hr_color;
     text-align: center;
