@@ -10,7 +10,7 @@ var Ws = {
 
       $('.fade_in').each( function(i, element){
         if(Ws.checkVisible($(element))) {
-          $(element).delay(100).animate({'opacity':'1'}, 500);
+          $(element).delay(100).animate({'opacity':'1'}, 400);
         }
       });
 
@@ -151,12 +151,12 @@ $(document).ready(function(){
   Ws.initializeMaps();
 
   $('.fade_in_always').each( function(i, element){
-    $(element).animate({'opacity':'1'},500);
+    $(element).animate({'opacity':'1'},400);
   });
 
   $('.move_up').each( function(i, element){
     if(Ws.checkVisible($(element))) {
-      $(element).animate({'margin-top':'-60px'},500);
+      $(element).animate({'margin-top':'-60px'},400);
     }
   });
 
