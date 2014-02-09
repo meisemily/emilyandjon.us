@@ -129,14 +129,6 @@ $container_max_width: 1300px;
 // Parallax / Fading Elements
 // ===========================================================================
 
-.fade_in {
-    opacity: 0;
-}
-
-.fade_in_always{
-    opacity: 0;
-}
-
 .parallax_container {
     position: relative;
     height: 440px;
@@ -299,10 +291,6 @@ footer {
         width: 42%;
         height: 100%;
     }
-
-    .button {
-        margin: 5px 0 20px 0;
-    }
 }
 
 // ===========================================================================
@@ -338,7 +326,7 @@ footer {
         padding: 50px 30px;
 
         h2 {
-            font-size: 1.6em;
+            font-size: 1.4em;
         }
     }
 
