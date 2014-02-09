@@ -129,8 +129,20 @@ $container_max_width: 1300px;
 // Parallax / Fading Elements
 // ===========================================================================
 
+.move_up {
+    &.animate {
+        @include transition(all 0.5s ease-out);
+        @include transform(translate(0, -10px));
+    }
+}
+
 .fade_in {
     opacity: 0;
+
+    &.animate {
+        @include transition(opacity 1s ease);
+        opacity: 1;
+    }
 }
 
 .parallax_container {
@@ -151,8 +163,8 @@ $container_max_width: 1300px;
     height: 700px;
 
     &.hero {
-        margin-top: 530px; // Feels bad
-        top: -176.5703125px; // Feels bad
+        margin-top: 540px; // Feels bad
+        top: -180.0546875px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
     }
 
@@ -176,7 +188,7 @@ $ring_size: 82px;
 .borderradius {
     .ring_wrapper {
         position: relative;
-        margin: -50px auto;
+        margin: 0 auto -60px auto;
         width: 140px;
         height: 140px;
         z-index: 2;
@@ -236,7 +248,7 @@ footer {
 
 #about {
     position: relative;
-    padding: 180px 0 780px 0;
+    padding: 135px 0 830px 0;
     height: 0;
     text-align: center;
     background-color: $sky;
@@ -308,10 +320,6 @@ footer {
 }
 
 @media screen and (max-width: 860px) {
-    .move_up {
-        margin-top: 0 !important; // Feels bad
-    }
-
     .parallax_container {
         height: 300px;
     }

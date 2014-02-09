@@ -9,7 +9,7 @@ var Ws = {
 
         $('.fade_in').each( function(i, element){
           if(Ws.checkVisible($(element))) {
-            $(element).delay(100).animate({'opacity':'1'}, 400);
+            $(element).delay(100).addClass('animate');
           }
         });
       }
@@ -150,17 +150,15 @@ $(document).ready(function(){
   $(window).resize(Ws.handleScroll);
   Ws.initializeMaps();
 
-  if (!Modernizr.touch) {
-    $('.fade_in_always').each( function(i, element){
-      $(element).animate({'opacity':'1'},400);
-    });
+  $('.fade_in_always').each( function(i, element){
+    $(element).addClass('animate');
+  });
 
-    $('.move_up').each( function(i, element){
-      if(Ws.checkVisible($(element))) {
-        $(element).animate({'margin-top':'-60px'},400);
-      }
-    });
-  } else {
+  $('.move_up').each( function(i, element){
+    $(element).addClass('animate');
+  });
+
+  if (Modernizr.touch) {
     $('.fade_in').css('opacity','1');
   }
 
