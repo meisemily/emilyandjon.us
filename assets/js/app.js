@@ -151,8 +151,6 @@ $(document).ready(function(){
   Ws.initializeMaps();
 
   if (!Modernizr.touch) {
-    $('.fade_in').css('opacity','0');
-
     $('.fade_in_always').each( function(i, element){
       $(element).animate({'opacity':'1'},400);
     });
@@ -162,6 +160,8 @@ $(document).ready(function(){
         $(element).animate({'margin-top':'-60px'},400);
       }
     });
+  } else {
+    $('.fade_in').css('opacity','1');
   }
 
   $('.scroll').click(function(event){

@@ -9,7 +9,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-    background-color: darken($sky, 5%);
+    background-color: darken($sky, 2%);
     color: #9b9fa2;
     font-size: 1.1em;
     font-weight: 300;
@@ -128,6 +128,10 @@ $container_max_width: 1300px;
 // ===========================================================================
 // Parallax / Fading Elements
 // ===========================================================================
+
+.fade_in {
+    opacity: 0;
+}
 
 .parallax_container {
     position: relative;
