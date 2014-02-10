@@ -9,7 +9,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-    background-color: #d1dbdf;
+    background-color: $hr_color;
     color: #9b9fa2;
     font-size: 1.1em;
     font-weight: 300;
@@ -178,8 +178,9 @@ $container_max_width: 1300px;
         background-image: url('../../images/photo_waterfront.jpg');
     }
 
-    &.tbd {
-        background-color: #cBd5d7;
+    &.brooklynbowl {
+        background-color: #c5acad;
+        background-image: url('../../images/photo_brooklynbowl.jpg');
     }
 }
 
