@@ -3,7 +3,13 @@ var Modernizr = Modernizr || {};
 
 var Ws = {
     lastHash: "",
+    scrollThrottle: true,
     handleScroll: function () {
+      if(!Ws.scrollThrottle) {
+        //console.log("failed throttle");
+        return;
+      }
+      Ws.scrollThrottle = false;
       if (!Modernizr.touch) {
         Ws.parallax();
 
@@ -146,6 +152,11 @@ var Ws = {
 };
 
 $(document).ready(function(){
+
+  setInterval(function(){
+    Ws.scrollThrottle = true;
+  }, (1/24) * 1000);
+
   $(window).scroll(Ws.handleScroll).scroll();
   $(window).resize(Ws.handleScroll);
   Ws.initializeMaps();
