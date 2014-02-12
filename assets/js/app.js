@@ -3,6 +3,14 @@ var Modernizr = Modernizr || {};
 
 var Ws = {
     lastHash: "",
+    detectIE: function () {
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf('MSIE ');
+
+      if (msie > 0) {
+        $('body').addClass('ie');
+      }
+    },
     handleScroll: function () {
       if (!Modernizr.touch) {
         Ws.parallax();
@@ -73,15 +81,16 @@ var Ws = {
           return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
     },
     parallax: function() {
-      $.each($('.parallax'), function (i, el) {
-        var scrollTop = $(window).scrollTop();
-        var speed = $(el).data('speed');
-        if (Ws.checkVisible($(el))) {
-          var pxToBump = -($(el).offset().top - scrollTop) * speed;
-          $(el).css('top',  pxToBump + 'px');
-        }
-      });
-
+      if (!$('body').hasClass('ie')) {
+        $.each($('.parallax'), function (i, el) {
+          var scrollTop = $(window).scrollTop();
+          var speed = $(el).data('speed');
+          if (Ws.checkVisible($(el))) {
+            var pxToBump = -($(el).offset().top - scrollTop) * speed;
+            $(el).css('top',  pxToBump + 'px');
+          }
+        });
+      }
     },
     initializeMaps: function() {
 
@@ -146,9 +155,10 @@ var Ws = {
 };
 
 $(document).ready(function(){
+  Ws.detectIE();
+  Ws.initializeMaps();
   $(window).scroll(Ws.handleScroll).scroll();
   $(window).resize(Ws.handleScroll);
-  Ws.initializeMaps();
 
   $('.fade_in_always').each( function(i, element){
     $(element).addClass('animate');
