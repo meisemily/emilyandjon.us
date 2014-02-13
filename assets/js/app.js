@@ -120,7 +120,7 @@ $(document).ready(function(){
       Ws.lastHash = this.hash;
       $('html,body').animate({
           scrollTop: $(this.hash).offset().top - $('#site_nav').height() + 1,
-      }, 500, 'swing', function(){
+      }, 300, 'swing', function(){
           Ws.lastHash = "";
       });
       Ws.highlightSelected();
