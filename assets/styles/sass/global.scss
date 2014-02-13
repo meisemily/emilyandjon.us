@@ -31,14 +31,14 @@ a {
 .button {
     display: inline-block;
     margin-top: 10px;
-    padding: 7px 12px;
+    padding: 10px 12px;
     font-weight: bold;
     font-size: 0.8em;
     border: 2px solid #e9e9e9;
     border-radius: 4px;
 
     &:hover {
-        border-color: #e0e0e0;
+        border-color: #dfdfdf;
     }
 }
 
@@ -88,7 +88,7 @@ $container_max_width: 1300px;
 
 #site_nav {
     position: fixed;
-    padding: 15px 0;
+    padding: 12px 0;
     width: 100%;
     max-width: $container_max_width;
     background-color: #fff;
@@ -106,7 +106,7 @@ $container_max_width: 1300px;
     }
 
     a {
-        $nav_color: #a3bbc3;
+        $nav_color: $foam;
 
         display: inline-block;
         padding: 5px 14px;
@@ -147,7 +147,7 @@ $container_max_width: 1300px;
 
 .parallax_container {
     position: relative;
-    height: 440px;
+    height: 500px;
     overflow: hidden;
 }
 
@@ -174,12 +174,13 @@ $container_max_width: 1300px;
     }
 
     &.waterfront {
-        background-color: #d8e5e9;
+        background-color: #ccd5da;
         background-image: url('../../images/photo_waterfront.jpg');
     }
 
-    &.tbd {
-        background-color: #d8e1e6;
+    &.killington {
+        background-color: #ccd5da;
+        background-image: url('../../images/photo_killington.jpg');
     }
 }
 
@@ -243,7 +244,7 @@ $ring_size: 82px;
 
 section,
 footer {
-    padding: 50px;
+    padding: 60px 50px;
     overflow: hidden;
 }
 
@@ -264,12 +265,14 @@ footer {
     }
 
     p {
-        color: darken($foam, 5%);
+        color: $foam;
         font-size: 1.7em;
     }
 }
 
 #wedding {
+    padding-top: 40px;
+    padding-bottom: 40px;
     background-color: $foam;
 
     h2 {
@@ -392,7 +395,8 @@ footer {
     }
 
     section,
+    #wedding,
     footer {
-        padding: 10px 0;
+        padding: 5px 0;
     }
 }
