@@ -90,7 +90,7 @@ $(document).ready(function(){
   var shouldScroll = true;
   setInterval(function(){
     shouldScroll = true;
-  }, (1/30) * 1000);
+  }, 16); // roughly 60 Hz
 
   Ws.detectIE();
 
