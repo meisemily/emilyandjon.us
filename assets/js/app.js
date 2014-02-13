@@ -3,7 +3,6 @@ var Modernizr = Modernizr || {};
 
 var Ws = {
     lastHash: "",
-    scrollThrottle: true,
     detectIE: function () {
       var ua = window.navigator.userAgent;
       var msie = ua.indexOf('MSIE ');
@@ -13,14 +12,8 @@ var Ws = {
       }
     },
     handleScroll: function () {
-      if(!Ws.scrollThrottle) {
-        //console.log("failed throttle");
-        return;
-      }
-      Ws.scrollThrottle = false;
       if (!Modernizr.touch) {
         Ws.parallax();
-
         $('.fade_in').each( function(i, element){
           if(Ws.checkVisible($(element))) {
             $(element).delay(100).addClass('animate');
@@ -71,20 +64,13 @@ var Ws = {
 
         return shouldBail;
     },
-    // lifted from http://upshots.org/javascript/jquery-test-if-element-is-in-viewport-visible-on-screen
+    // lifted from http://stackoverflow.com/questions/6031649/jquery-show-hide-div-when-section-is-in-viewport?rq=1
     checkVisible: function(element) {
-          var win = $(window);
-          var viewport = {
-              top : win.scrollTop(),
-              left : win.scrollLeft()
-          };
-          viewport.right = viewport.left + win.width();
-          viewport.bottom = viewport.top + win.height();
-           
-          var bounds = element.offset();
-          bounds.right = bounds.left + element.outerWidth();
-          bounds.bottom = bounds.top + element.outerHeight();
-          return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+          var height = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var obj = $(element);
+          var pos = obj.position();
+          return (height + scrollTop > pos.top);
     },
     parallax: function() {
       if (!$('body').hasClass('ie')) {
@@ -101,12 +87,19 @@ var Ws = {
 };
 
 $(document).ready(function(){
+  var shouldScroll = true;
   setInterval(function(){
-    Ws.scrollThrottle = true;
-  }, (1/24) * 1000);
+    shouldScroll = true;
+  }, (1/30) * 1000);
 
   Ws.detectIE();
-  $(window).scroll(Ws.handleScroll).scroll();
+
+  $(window).scroll(function() {
+    if(shouldScroll) {
+      Ws.handleScroll();
+      shouldScroll = false;
+    }
+  }).scroll();
   $(window).resize(Ws.handleScroll);
 
   $('.fade_in_always').each( function(i, element){
@@ -124,11 +117,10 @@ $(document).ready(function(){
   $('.scroll').click(function(event){
       event.preventDefault();
       Ws.lastHash = this.hash;
-
       $('html,body').animate({
           scrollTop: $(this.hash).offset().top - $('#site_nav').height() + 1,
       }, 500, 'swing', function(){
-          Ws.lastHash =  "";
+          Ws.lastHash = "";
       });
       Ws.highlightSelected();
   });
