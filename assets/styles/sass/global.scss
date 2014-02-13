@@ -34,7 +34,7 @@ a {
     padding: 7px 12px;
     font-weight: bold;
     font-size: 0.8em;
-    border: 2px solid #ededed;
+    border: 2px solid #e9e9e9;
     border-radius: 4px;
 
     &:hover {
@@ -178,9 +178,8 @@ $container_max_width: 1300px;
         background-image: url('../../images/photo_waterfront.jpg');
     }
 
-    &.brooklynbowl {
-        background-color: #c5acad;
-        background-image: url('../../images/photo_brooklynbowl.jpg');
+    &.tbd {
+        background-color: #d8e1e6;
     }
 }
 
@@ -189,6 +188,7 @@ $ring_size: 82px;
 .borderradius {
     .ring_wrapper {
         position: relative;
+        top: -20.678125px; // Feels bad
         margin: 0 auto -60px auto;
         width: 140px;
         height: 140px;
@@ -298,7 +298,7 @@ footer {
 #accommodations {
     .wrapper {
         position: relative;
-        padding-right: calc(42% + 30px);
+        padding-right: 46%;
     }
 
     .map {
@@ -356,11 +356,11 @@ footer {
 
     #about {
         font-size: 0.9em;
-        padding: 45px 0;
+        padding: 45px 0 35px 0;
         height: auto;
 
         .ring_wrapper {
-            margin: 0 auto -25px auto;
+            margin: 30px auto -35px auto;
         }
 
         .photo {
