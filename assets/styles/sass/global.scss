@@ -164,8 +164,8 @@ $container_max_width: 1300px;
 
     &.hero {
         margin-top: 540px; // Feels bad
-        top: -180.0546875px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
+        @include transform(translate(0, -180px)); //still feels bad
     }
 
     &.winery {

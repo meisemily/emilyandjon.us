@@ -78,8 +78,9 @@ var Ws = {
           var scrollTop = $(window).scrollTop();
           var speed = $(el).data('speed');
           if (Ws.checkVisible($(el))) {
-            var pxToBump = -($(el).offset().top - scrollTop) * speed;
-            $(el).css('top',  pxToBump + 'px');
+            var px = -($(el).offset().top - scrollTop);
+            var pxToBump = px * speed;
+            $(el).css('transform',  'translate(0, ' + pxToBump + 'px)');
           }
         });
       }
