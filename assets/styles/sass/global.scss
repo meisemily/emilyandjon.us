@@ -165,7 +165,7 @@ $container_max_width: 1300px;
     &.hero {
         margin-top: 540px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
-        @include transform(translate(0, -180px)); //still feels bad
+        @include transform(translate(0, -180px)); // still feels bad
     }
 
     &.winery {
@@ -189,11 +189,11 @@ $ring_size: 82px;
 .borderradius {
     .ring_wrapper {
         position: relative;
-        top: -20.678125px; // Feels bad
-        margin: 0 auto -60px auto;
+        margin: 20px auto -80px auto;
         width: 140px;
         height: 140px;
         z-index: 2;
+        @include transform(translate(0px, -44.31831359863281px)); // Feels bad
     }
 
     .ring {
