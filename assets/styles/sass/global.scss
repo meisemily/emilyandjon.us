@@ -362,7 +362,7 @@ footer {
         padding-bottom: 520px;
 
         .ring_wrapper {
-            margin: -50px auto -65px auto;
+            margin: -50px auto -60px auto;
         }
 
         .photo {
@@ -384,7 +384,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .parallax_container {
         height: 300px;
     }
@@ -398,7 +398,7 @@ footer {
         height: auto;
 
         .ring_wrapper {
-            margin: 60px auto -70px auto;
+            margin: 40px auto -55px auto;
         }
 
         .photo {
