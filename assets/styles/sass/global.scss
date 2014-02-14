@@ -400,3 +400,9 @@ footer {
         padding: 5px 0;
     }
 }
+
+@media screen and (max-height: 900px) {
+    #about {
+        padding-bottom: 1000px;
+    }
+}
