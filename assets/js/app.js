@@ -82,6 +82,10 @@ var Ws = {
             var pxToBump = px * speed;
             $(el).css('transform',  'translate(0, ' + pxToBump + 'px)');
           }
+          if (scrollTop === 0) {
+            $('.hero').css('transform',  'matrix(1, 0, 0, 1, 0px, 0px)');
+            $('.ring_wrapper').css('transform',  'matrix(1, 0, 0, 1, 0px, 0px)');
+          }
         });
       }
     },
