@@ -368,6 +368,7 @@ footer {
 
         .photo {
             margin-top: 260px;
+            @include transform(translate(0, 45.88702239990234px));
         }
     }
 
