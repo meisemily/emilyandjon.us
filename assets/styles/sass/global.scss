@@ -163,9 +163,9 @@ $container_max_width: 1300px;
     height: 700px;
 
     &.hero {
-        margin-top: 320px; // Feels bad
+        margin-top: 400px; // Feels bad
         background-image: url('../../images/photo_hero.jpg');
-        @include transform(translate(0, 75.0125px)); // still feels bad
+        @include transform(translate(0, -36.364462280273436px)); // still feels bad
     }
 
     &.winery {
@@ -250,7 +250,7 @@ footer {
 
 #about {
     position: relative;
-    padding: 135px 0 760px 0;
+    padding: 135px 0 860px 0;
     height: 0;
     text-align: center;
     background-color: $sky;
@@ -359,7 +359,7 @@ footer {
 
     #about {
         font-size: 0.9em;
-        padding-bottom: 510px;
+        padding-bottom: 560px;
 
         .ring_wrapper {
             margin: -80px auto -50px auto;
@@ -367,8 +367,8 @@ footer {
         }
 
         .photo {
-            margin-top: 260px;
-            @include transform(translate(0, 45.88702239990234px));
+            margin-top: 320px;
+            @include transform(translate(0, -29.09173583984375px));
         }
     }
 
