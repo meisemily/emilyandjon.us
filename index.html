@@ -119,16 +119,25 @@
             icon: location[3],
             title: location[0]
         });
-        google.maps.event.addListener(marker, 'click', markerClick(marker));
+        if(!Modernizr.touch) {
+          google.maps.event.addListener(marker, 'click', markerClick(marker));
+        }
       }
     };
     var homeLatlng = new google.maps.LatLng(40.70562,-73.972558);
     var mapOptions = {
       zoom: 13,
-      scrollwheel: false,
-      mapTypeControl: false,
       center: homeLatlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      draggable: !Modernizr.touch,
+      scrollwheel: false,
+      disableDoubleClickZoom: true,
+      disableDefaultUI:true, 
+      zoomControl: !Modernizr.touch,
+      navigationControl: false,
+      streetViewControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
     };
     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     var goldStar = {
