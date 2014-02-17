@@ -88,7 +88,6 @@ $container_max_width: 1300px;
 
 #site_nav {
     position: fixed;
-    padding: 12px 0;
     width: 100%;
     max-width: $container_max_width;
     background-color: #fff;
@@ -99,9 +98,10 @@ $container_max_width: 1300px;
 
     li {
         display: inline-block;
+        padding: 12px 0;
 
         + li {
-            margin-left: 8px;
+            margin-left: 14px;
         }
     }
 
@@ -109,9 +109,8 @@ $container_max_width: 1300px;
         $nav_color: $foam;
 
         display: inline-block;
-        padding: 5px 14px;
+        padding: 7px 12px;
         color: $nav_color;
-        font-size: 1.1em;
         border-radius: 3px;
 
         &:hover {
@@ -244,7 +243,7 @@ $ring_size: 82px;
 
 section,
 footer {
-    padding: 60px 50px;
+    padding: 45px 50px;
     overflow: hidden;
 }
 
