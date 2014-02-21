@@ -147,7 +147,7 @@ $container_max_width: 1300px;
 
 .parallax_container {
     position: relative;
-    height: 500px;
+    height: 440px;
     overflow: hidden;
 }
 
@@ -219,7 +219,7 @@ $ring_size: 82px;
 .content {
     position: relative;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 40px 20px;
     max-width: 960px;
     box-sizing: border-box;
     overflow: hidden;
@@ -267,6 +267,10 @@ footer {
     p {
         color: $foam;
         font-size: 1.7em;
+    }
+
+    .content {
+        padding: 30px 0;
     }
 }
 
