@@ -32,7 +32,7 @@
 <body>
     <nav id="site_nav" class="bottom">
         <ul>
-            <li><a href="#hello" class="scroll active">Emily + Jon</a></li>
+            <li><a href="#hello" class="scroll active">Hello</a></li>
             <li><a href="#wedding" class="scroll">The Wedding</a></li>
             <li><a href="#accommodations" class="scroll">Accommodations</a></li>
             <li><a href="#todo" class="scroll">Things To Do</a></li>
@@ -53,8 +53,6 @@
             </div>
         </div>
     </section>
-
-    <div class="section photo hello"></div>
 
     <section class="section" id="wedding">
         <div class="content">
@@ -79,8 +77,8 @@
     <section class="section" id="todo">
         <div class="content">
             <h2>Things To Do</h2>
-            <p>There are a lot of fun things to do in New York. We put together <a href="https://foursquare.com/emilygetman/list/best">a list</a> of some of our favorite places to eat, drink, and explore.</p>
-            <p><a class="button" href="https://foursquare.com/emilygetman/list/best">View list on Foursquare</a></p>
+            <p>There are a lot of fun things to do in New York. We put together <a href="https://foursquare.com/emilygetman/list/best">a Foursquare list</a> of some of our favorite places to eat, drink, and explore.</p>
+            <p><a class="button scroll" href="#map">Check out the map &darr;</a></p>
         </div>
     </section>
 
@@ -120,7 +118,7 @@
     };
     var homeLatlng = new google.maps.LatLng(40.717371,-73.955123);
     var mapOptions = {
-      zoom: 13,
+      zoom: 14,
       center: homeLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       draggable: !Modernizr.touch,
@@ -128,8 +126,8 @@
       disableDoubleClickZoom: true,
       disableDefaultUI: false,
       zoomControl: !Modernizr.touch,
-      navigationControl: false,
-      streetViewControl: false,
+      navigationControl: true,
+      streetViewControl: true,
       mapTypeControl: false,
       scaleControl: false,
     };
