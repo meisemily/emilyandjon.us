@@ -22,7 +22,7 @@ var Ws = {
       }
       var started = $(window).scrollTop();
       var fromBottom = $(document).height() - ($(window).scrollTop() + $(window).height());
-      var boundary = started  + $('#menu').height() + $('section').first().height();
+      var boundary = started  + $('#menu').height() + ($('window').height());
 
       if (started === 0) {
           $('nav a.active').removeClass('active');
