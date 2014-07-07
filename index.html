@@ -96,9 +96,13 @@
   <script>
     var setMarkers = function(map, locations) {
       var infowindow = new google.maps.InfoWindow();
-      var markerClick =(function(marker) {
+      var markerClick =(function(marker, url) {
         return function() {
-          infowindow.setContent(marker.title);
+          if(url){
+            infowindow.setContent('<a href="'+url+'" target="_blank" class="map_tooltip">'+marker.title+'</a>');
+          } else {
+            infowindow.setContent(marker.title);
+          }
           infowindow.open(map, marker);
         };
       });
@@ -109,10 +113,10 @@
             position: myLatLng,
             map: map,
             icon: location[3],
-            title: location[0]
+            title: location[0],
         });
         if(!Modernizr.touch) {
-          google.maps.event.addListener(marker, 'click', markerClick(marker));
+          google.maps.event.addListener(marker, 'click', markerClick(marker, location[4])); 
         }
       }
     };
@@ -149,7 +153,8 @@
         var name = item.venue.name;
         var lat = item.venue.location.lat;
         var lng = item.venue.location.lng;
-        var itemEntry = [name, lat, lng];
+        var url = 'http://foursquare.com/v/' + item.venue.id;
+        var itemEntry = [name, lat, lng, null, url];
         foursquarePlaces.push(itemEntry);
       }
       setMarkers(map, foursquarePlaces);
