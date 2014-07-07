@@ -22,7 +22,6 @@
       $(document).ready(function() {
           $.fn.fullpage({
               menu: '#menu',
-              //anchors: ['hello', 'wedding', 'accommodations', 'todo', 'registry'],
               autoScrolling: false,
               resize : false,
               navigation: false
@@ -31,22 +30,33 @@
   </script>
 </head>
 <body>
-    <section class="section" id="hello">
-        <div class="content center">
-            <div class="ring_wrapper">
-                <span class="ring move_up"></span>
-                <span class="ring move_up"></span>
+    <nav id="site_nav">
+        <ul>
+            <li><a href="#hello" class="scroll active">Emily + Jon</a></li>
+            <li><a href="#wedding" class="scroll">The Wedding</a></li>
+            <li><a href="#accommodations" class="scroll">Accommodations</a></li>
+            <li><a href="#todo" class="scroll">Things To Do</a></li>
+            <li><a href="#registry" class="scroll">Registry</a></li>
+        </ul>
+    </nav>
+
+    <section class="section photo hero" id="hello">
+        <div class="white_smoke">
+            <div class="content center">
+                <!--
+                <div class="ring_wrapper">
+                    <span class="ring move_up"></span>
+                    <span class="ring move_up"></span>
+                </div>
+                <h1>Emily + Jon</h1>
+                <p>September 6, 2014</p>
+                -->
             </div>
-            <h1>Emily + Jon</h1>
-            <p>September 6, 2014</p>
+            <a class="tease scroll" href="#wedding">
+                <span class="arrow"><span class="offstage">Next</span></span>
+            </a>
         </div>
     </section>
-
-    <nav id="menu">
-      <a class="tease scroll" href="#wedding">
-          <span class="arrow"><span class="offstage">Next</span></span>
-      </a>
-    </nav>
 
     <div class="section photo hero"></div>
 
@@ -68,8 +78,6 @@
         </div>
     </section>
 
-    <div id="map_canvas" class="map section"></div>
-
     <section class="section" id="todo">
         <div class="content">
             <h2>Things To Do</h2>
@@ -77,6 +85,8 @@
             <p><a class="button" href="https://foursquare.com/emilygetman/list/best">View list on Foursquare</a></p>
         </div>
     </section>
+
+    <div class="section" id="map"></div>
 
     <section class="section" id="registry">
         <div class="content">
@@ -112,7 +122,7 @@
     };
     var homeLatlng = new google.maps.LatLng(40.70562,-73.972558);
     var mapOptions = {
-      zoom: 14,
+      zoom: 13,
       center: homeLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       draggable: !Modernizr.touch,
@@ -120,12 +130,12 @@
       disableDoubleClickZoom: true,
       disableDefaultUI: false,
       zoomControl: !Modernizr.touch,
-      navigationControl: true,
-      streetViewControl: true,
-      mapTypeControl: true,
+      navigationControl: false,
+      streetViewControl: false,
+      mapTypeControl: false,
       scaleControl: false,
     };
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var goldStar = {
       path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
       fillColor: 'yellow',
@@ -137,8 +147,6 @@
     var places = [
       ['Brooklyn Winery', 40.717371,-73.955123, goldStar],
       ['Brooklyn Bridge Marriott', 40.694306,-73.988206]
-      //['Wythe Hotel', 40.722429,-73.95799],
-      //['King & Grove Hotel', 40.721274,-73.955437]
     ];
     setMarkers(map, places);
     google.maps.event.addDomListener(window, 'resize', function() {

@@ -4,9 +4,9 @@
 
 $bg_color:          #fff;
 $header_color:      #505751;
-$body_color:        #848484;
-$link_color:        #999;
-$link_hover_color:  #3987c6;
+$body_color:        #9e9e9e;
+$link_color:        #6a9e9a;
+$link_hover_color:  #913834;
 
 // ===========================================================================
 // Mixins
@@ -152,8 +152,9 @@ section {
     position: relative;
 
     .content {
-        padding: 0 8em;
+        padding: 0 7em;
         margin: 0 auto;
+        max-width: 900px;
         @include vertical_align;
     }
 }
@@ -171,6 +172,7 @@ h1 {
 }
 
 h2 {
+    color: darken($body_color, 20%);
     font-size: 2rem;
 }
 
@@ -182,7 +184,7 @@ a {
 
 p > a {
     color: $link_color;
-    border-bottom: 1px solid $link_color;
+    border-bottom: 1px solid lighten($link_color, 20%);
 
     &:hover {
         color: $link_hover_color;
@@ -191,14 +193,45 @@ p > a {
 }
 
 .button {
-    margin-top: 15px;
-    padding: 0.8rem 0.9rem;
-    border: 2px solid #ccc;
+    margin-top: 30px;
+    padding: 8px 12px;
+    border: 1px solid lighten($link_color, 20%);
 
     &:hover {
         color: #fff;
         border-color: $link_hover_color;
         background-color: $link_hover_color;
+    }
+}
+
+#site_nav {
+    position: fixed;
+    width: 100%;
+    background-color: $link_color;
+    text-align: center;
+    z-index: 100;
+    font-size: 1em;
+
+    li {
+        display: inline-block;
+        padding: 10px 0;
+
+        + li {
+            margin-left: 36px;
+        }
+    }
+
+    a {
+        $nav_color: #fff;
+
+        display: inline-block;
+        padding: 7px 0;
+        color: transparentize($nav_color, 0.5);
+
+        &:hover,
+        &.active {
+            color: $nav_color;
+        }
     }
 }
 
@@ -228,10 +261,10 @@ p > a {
     }
 
     &:hover {
-        background-color: $link_color;
+        background-color: transparentize($link_hover_color, 0.6);
 
         .arrow {
-            border-color: darken($link_color, 35%) transparent transparent transparent;
+            border-color: $link_hover_color transparent transparent transparent;
         }
     }
 }
@@ -273,4 +306,11 @@ $ring_size: 82px;
         margin-top: $ring_size/2;
         left: 45px;
     }
+}
+
+.white_smoke {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
 }

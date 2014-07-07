@@ -12,15 +12,6 @@ var Ws = {
       }
     },
     handleScroll: function () {
-      if (!Modernizr.touch) {
-        Ws.parallax();
-        $('.fade_in').each( function(i, element){
-          if(Ws.checkVisible($(element))) {
-            $(element).delay(100).addClass('animate');
-          }
-        });
-      }
-
       var shouldBail = false;
       // if doing this from a click, just select the clicked thing
       if(Ws.lastHash.length) {
@@ -31,7 +22,7 @@ var Ws = {
       }
       var started = $(window).scrollTop();
       var fromBottom = $(document).height() - ($(window).scrollTop() + $(window).height());
-      var boundary = started  + $('#site_nav').height() + $('section').first().height();
+      var boundary = started  + $('#menu').height() + $('section').first().height();
 
       if (started === 0) {
           $('nav a.active').removeClass('active');
@@ -72,19 +63,6 @@ var Ws = {
           var pos = obj.position();
           return (height + scrollTop > pos.top);
     },
-    parallax: function() {
-      if (!$('body').hasClass('ie')) {
-        $.each($('.parallax'), function (i, el) {
-          var scrollTop = $(window).scrollTop();
-          var speed = $(el).data('speed');
-          if (Ws.checkVisible($(el))) {
-            var px = -($(el).offset().top - scrollTop);
-            var pxToBump = px * speed;
-            $(el).css('transform',  'translate(0, ' + pxToBump + 'px)');
-          }
-        });
-      }
-    },
 };
 
 $(document).ready(function(){
@@ -103,24 +81,12 @@ $(document).ready(function(){
   }).scroll();
   $(window).resize(Ws.handleScroll);
 
-  $('.fade_in_always').each( function(i, element){
-    $(element).addClass('animate');
-  });
-
-  $('.move_up').each( function(i, element){
-    $(element).addClass('animate');
-  });
-
-  if (Modernizr.touch) {
-    $('.fade_in').css('opacity','1');
-  }
-
   $('.scroll').click(function(event){
       event.preventDefault();
       Ws.lastHash = this.hash;
       $('html,body').animate({
-          scrollTop: $(this.hash).offset().top - $('#site_nav').height() + 1,
-      }, 300, 'swing', function(){
+          scrollTop: $(this.hash).offset().top,
+      }, 400, 'swing', function(){
           Ws.lastHash = "";
       });
       Ws.highlightSelected();
