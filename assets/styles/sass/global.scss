@@ -30,7 +30,7 @@ $link_hover_color:  #913834;
     }
 }
 
-@mixin transition($duration: 0.18s, $property: all, $easing: ease-out, $delay: 0s) {
+@mixin transition($duration: 0.15s, $property: all, $easing: ease-out, $delay: 0s) {
     -ms-transition: $property $duration $easing $delay;
     -webkit-transition: $property $duration $easing $delay;
     transition: $property $duration $easing $delay;
@@ -55,25 +55,6 @@ $link_hover_color:  #913834;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
-
-@mixin retina_background($file, $type, $width, $height) {
-    background-image: url($file + '.' + $type);
-
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (-moz-min-device-pixel-ratio: 2),
-        only screen and (-o-min-device-pixel-ratio: 2/1),
-        only screen and (min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
-        & {
-          background-image: url($file + '@2x.' + $type);
-          -webkit-background-size: $width $height;
-          -moz-background-size: $width $height;
-          -o-background-size: $width $height;
-          background-size: $width $height;
-        }
-    }
 }
 
 // ===========================================================================
@@ -132,6 +113,14 @@ section {
     font-family: "brandon-grotesque-1", "brandon-grotesque-2", sans-serif;
 }
 
+::selection {
+    background: lighten($link_color, 35%);
+}
+
+::-moz-selection {
+    background: lighten($link_color, 35%);
+}
+
 // ===========================================================================
 // Stuff
 // ===========================================================================
@@ -159,7 +148,7 @@ section {
 h1, h2, h3, h4, h5, h6 {
     color: $header_color;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -179,25 +168,47 @@ a {
 }
 
 p > a {
+    padding: 0 3px;
     color: $link_color;
-    border-bottom: 1px solid lighten($link_color, 20%);
+    background: lighten($link_color, 42%);
 
     &:hover {
         color: $link_hover_color;
-        border-bottom-color: $link_hover_color;
+        background: lighten($link_hover_color, 50%);
     }
 }
 
 .button {
     margin-top: 30px;
     padding: 8px 12px;
-    font-weight: 700;
-    border: 1px solid lighten($link_color, 20%);
+    background-color: #fff;
+    border: 2px solid lighten($link_color, 20%);
 
     &:hover {
         color: #fff;
         border-color: $link_hover_color;
         background-color: $link_hover_color;
+    }
+}
+
+.tease {
+    margin-top: 40px;
+    padding: 0 30px;
+    font-size: 2.8rem;
+    color: lighten($link_color, 30%);
+    @include animation(tease 4s infinite);
+
+    &:hover {
+        color: $link_hover_color;
+    }
+
+    &.white {
+        margin-top: 10px;
+        color: #fff;
+
+        &:hover {
+            color: transparentize(#fff, 0.5);
+        }
     }
 }
 
@@ -213,6 +224,7 @@ p > a {
 #site_nav {
     position: fixed;
     width: 100%;
+    font-size: 1.01rem;
     background-color: $link_color;
     z-index: 100;
 
@@ -227,7 +239,10 @@ p > a {
 
     a {
         $nav_color: #fff;
+        $nip_size: 4px;
 
+
+        position: relative;
         display: inline-block;
         padding: 7px 0;
         color: transparentize($nav_color, 0.5);
@@ -235,6 +250,20 @@ p > a {
         &:hover,
         &.active {
             color: $nav_color;
+        }
+
+        &:after {
+            position: absolute;
+            left: 50%;
+            margin-left: -$nip_size;
+            bottom: -2px;
+            display: inline-block;
+            content: '';
+            border: $nip_size solid transparent;
+        }
+
+        &.active:after {
+            border-top-color: $nav_color;
         }
     }
 }
@@ -287,18 +316,6 @@ $ring_size: 70px;
         width: 100%;
         height: 100%;
         background-color: transparentize(#757472, 0.8);
-    }
-
-    .tease {
-        margin-top: 10px;
-        padding: 0 30px;
-        font-size: 2.8rem;
-        color: #fff;
-        @include animation(tease 4s infinite);
-
-        &:hover {
-            color: transparentize(#fff, 0.5);
-        }
     }
 
     h1,
