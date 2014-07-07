@@ -73,6 +73,10 @@ $(document).ready(function(){
 
   Ws.detectIE();
 
+  if (Modernizr.touch) {
+    $('.photo').css('background-attachment', 'scroll');
+  }
+
   $(window).scroll(function() {
     if(shouldScroll) {
       Ws.handleScroll();
