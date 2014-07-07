@@ -336,6 +336,7 @@ $ring_size: 70px;
 @media screen and (max-width: 820px) {
     #site_nav {
         display: none;
+        height: 0;
     }
 
     section .content {
