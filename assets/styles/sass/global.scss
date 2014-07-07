@@ -201,6 +201,15 @@ p > a {
     }
 }
 
+.map_tooltip {
+    color: $link_color;
+    font-weight: bold;
+
+    &:hover {
+        color: $link_hover_color;
+    }
+}
+
 #site_nav {
     position: fixed;
     width: 100%;
