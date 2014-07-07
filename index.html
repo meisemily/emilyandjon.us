@@ -97,6 +97,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3jkgkMnSLAM6Vu7u5U9dQmFV9V8MBLs&sensor=false"></script>
   <script>
     var setMarkers = function(map, locations) {
+      console.log('setting markers');
       var infowindow = new google.maps.InfoWindow();
       var markerClick =(function(marker) {
         return function() {
@@ -118,7 +119,7 @@
         }
       }
     };
-    var homeLatlng = new google.maps.LatLng(40.70562,-73.972558);
+    var homeLatlng = new google.maps.LatLng(40.717371,-73.955123);
     var mapOptions = {
       zoom: 13,
       center: homeLatlng,
@@ -142,11 +143,20 @@
       strokeColor: '#c73c30',
       strokeWeight: 2
     };
-    var places = [
-      ['Brooklyn Winery', 40.717371,-73.955123, goldStar],
-      ['Brooklyn Bridge Marriott', 40.694306,-73.988206]
-    ];
-    setMarkers(map, places);
+    var foursquareURL = "https://api.foursquare.com/v2/lists/52c81eef498ebb32281a7c6f?oauth_token=X21YWONQMGXIC1V0CEI43VIO0212P3JT14B4QRNS5IXMX3RV&v=20140706"
+    $.get(foursquareURL, function(data) {
+      var items = data.response.list.listItems.items;
+      var foursquarePlaces = [['Brooklyn Winery', 40.717371,-73.955123, goldStar]];
+      for (var i = 0; i < items.length; i++){
+        var item = items[i];
+        var name = item.venue.name;
+        var lat = item.venue.location.lat;
+        var lng = item.venue.location.lng;
+        var itemEntry = [name, lat, lng];
+        foursquarePlaces.push(itemEntry);
+      }
+      setMarkers(map, foursquarePlaces);
+    });
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(homeLatlng);
     });
