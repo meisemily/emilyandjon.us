@@ -162,7 +162,6 @@ h2 {
 }
 
 a {
-    display: inline-block;
     text-decoration: none;
     @include transition;
 }
@@ -179,6 +178,7 @@ p > a {
 }
 
 .button {
+    display: inline-block;
     margin-top: 30px;
     padding: 12px;
     line-height: 1;
@@ -193,6 +193,7 @@ p > a {
 }
 
 .tease {
+    display: inline-block;
     margin-top: 41px;
     padding: 0 30px;
     font-size: 2.6rem;
@@ -375,11 +376,14 @@ $ring_size: 70px;
 
     section .content {
         font-size: 1rem;
-        padding: 0 1.4em;
+        padding: 0 1.7em;
     }
 
-    .tease {
-        margin-top: 0;
-        padding: 0;
+    .button {
+        display: none;
+    }
+
+    .ring_wrapper {
+        padding: 30px 0;
     }
 }
