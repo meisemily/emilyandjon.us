@@ -67,7 +67,7 @@ $link_hover_color:  #913834;
     }
 
     50% {
-        @include transform(translate(0, -10px));
+        @include transform(translate(0, -20px));
     }
 
     100% {
