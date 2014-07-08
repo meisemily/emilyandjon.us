@@ -118,6 +118,7 @@
             map: map,
             icon: location[3],
             title: location[0],
+            optimized: false, 
         });
         if(!Modernizr.touch) {
           google.maps.event.addListener(marker, 'click', markerClick(marker, location[4]));
@@ -151,7 +152,7 @@
     var foursquareURL = "https://api.foursquare.com/v2/lists/52c81eef498ebb32281a7c6f?oauth_token=X21YWONQMGXIC1V0CEI43VIO0212P3JT14B4QRNS5IXMX3RV&v=20140706"
     $.get(foursquareURL, function(data) {
       var items = data.response.list.listItems.items;
-      var foursquarePlaces = [['Brooklyn Winery', 40.717371,-73.955123, goldStar]];
+      var foursquarePlaces = [];
       for (var i = 0; i < items.length; i++){
         var item = items[i];
         var name = item.venue.name;
@@ -161,6 +162,7 @@
         var itemEntry = [name, lat, lng, null, url];
         foursquarePlaces.push(itemEntry);
       }
+      foursquarePlaces.push(['Brooklyn Winery', 40.717371,-73.955123, goldStar]);
       setMarkers(map, foursquarePlaces);
     });
     google.maps.event.addDomListener(window, 'resize', function() {
