@@ -122,9 +122,7 @@
             optimized: false, 
             zIndex:i,
         });
-        if(!Modernizr.touch) {
-          google.maps.event.addListener(marker, 'click', markerClick(marker, location[4]));
-        }
+        google.maps.event.addListener(marker, 'click', markerClick(marker, location[4]));
       }
     };
     var homeLatlng = new google.maps.LatLng(40.717371,-73.955123);
