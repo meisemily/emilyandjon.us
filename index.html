@@ -139,6 +139,14 @@
       streetViewControl: false,
       mapTypeControl: false,
       scaleControl: false,
+      styles:     [{
+        featureType: "poi",
+        elementType: "all",
+        stylers: [
+              { visibility: "off" }
+        ]
+      }],
+
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var goldStar = {
