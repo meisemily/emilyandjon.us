@@ -138,7 +138,7 @@ section {
     position: relative;
 
     .content {
-        padding: 0 7em;
+        padding: 0 7em 24px 7em;
         margin: 0 auto;
         max-width: 760px;
         @include vertical_align;
