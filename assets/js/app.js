@@ -22,7 +22,7 @@ var Ws = {
       }
       var started = $(window).scrollTop();
       var fromBottom = $(document).height() - ($(window).scrollTop() + $(window).height());
-      var boundary = started  + $('#menu').height() + ($('window').height());
+      var boundary = started  + $('#menu').height() + ($('window').height() + $('#site_nav').height());
 
       if (started === 0) {
           $('nav a.active').removeClass('active');
@@ -89,7 +89,7 @@ $(document).ready(function(){
       event.preventDefault();
       Ws.lastHash = this.hash;
       $('html,body').animate({
-          scrollTop: $(this.hash).offset().top,
+          scrollTop: $(this.hash).offset().top - $('#site_nav').height(),
       }, 400, 'swing', function(){
           Ws.lastHash = "";
       });
