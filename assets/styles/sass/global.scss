@@ -355,10 +355,18 @@ $ring_size: 70px;
     }
 }
 
+// Landscape / Short windows
+@media screen and (max-height: 420px) {
+    .ring_wrapper,
+    .tease {
+        display: none;
+    }
+}
+
 // iPhone
 @media screen and (max-width: 320px) {
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 
     h2 {
@@ -367,6 +375,10 @@ $ring_size: 70px;
 
     section .content {
         font-size: 1rem;
-        padding: 0 1.5em;
+        padding: 0 1.4em;
+    }
+
+    .tease {
+        margin-top: 0;
     }
 }
