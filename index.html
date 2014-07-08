@@ -147,7 +147,8 @@
     var foursquareURL = "https://api.foursquare.com/v2/lists/52c81eef498ebb32281a7c6f?oauth_token=X21YWONQMGXIC1V0CEI43VIO0212P3JT14B4QRNS5IXMX3RV&v=20140706"
     $.get(foursquareURL, function(data) {
       var items = data.response.list.listItems.items;
-      var foursquarePlaces = [['Brooklyn Winery', 40.717371,-73.955123, goldStar]];
+      var foursquarePlaces = [['Brooklyn Winery', 40.717371,-73.955123, goldStar],
+                              ['Brooklyn Bridge Marriott', 40.694306,-73.988206]];
       for (var i = 0; i < items.length; i++){
         var item = items[i];
         var name = item.venue.name;
