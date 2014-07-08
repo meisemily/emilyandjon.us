@@ -140,7 +140,7 @@ section {
     .content {
         padding: 0 7em 24px 7em;
         margin: 0 auto;
-        max-width: 760px;
+        max-width: 780px;
         @include vertical_align;
     }
 }
@@ -193,23 +193,32 @@ p > a {
 }
 
 .tease {
-    margin-top: 40px;
+    margin-top: 41px;
     padding: 0 30px;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     color: lighten($link_color, 30%);
-    @include animation(tease 4s infinite);
 
     &:hover {
         color: $link_hover_color;
     }
 
+    &.animate {
+        @include animation(tease 4s infinite);
+    }
+
     &.white {
         margin-top: 10px;
         color: #fff;
+        font-size: 3rem;
 
         &:hover {
             color: transparentize(#fff, 0.5);
         }
+    }
+
+    &.small {
+        margin-top: 40px;
+        font-size: 1rem;
     }
 }
 
@@ -291,7 +300,8 @@ p > a {
 $ring_size: 70px;
 .ring_wrapper {
     position: relative;
-    margin: 0 auto 60px auto;
+    padding: 50px 0 60px 0;
+    margin: 0 auto;
     width: 150px;
     height: 100px;
     z-index: 2;
