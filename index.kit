@@ -13,101 +13,101 @@
   <link rel="stylesheet" href="assets/styles/css/reset.css">
   <link rel="stylesheet" href="assets/styles/css/global.css">
 
+  <script src="assets/js/jquery-1.11.0.min.js"></script>
+  <script src="assets/js/jquery.easings.min.js"></script>
+  <script src="assets/js/jquery.fullPage.min.js"></script>
   <script src="assets/js/modernizr.custom.25325.js"></script>
   <script src="//use.typekit.net/hhv7cfg.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
+  <script>
+      $(document).ready(function() {
+          $.fn.fullpage({
+              menu: '#menu',
+              autoScrolling: false,
+              resize : false,
+              navigation: false
+          });
+      });
+  </script>
 </head>
 <body>
-  <div id="container">
-    <nav id="site_nav">
-      <ul class="fade_in fade_in_always">
-        <li><a href="#about" class="scroll active">Emily + Jon</a></li>
-        <li><a href="#wedding" class="scroll">The Wedding</a></li>
-        <li><a href="#accommodations" class="scroll">Accommodations</a></li>
-        <li><a href="#todo" class="scroll">Things To Do</a></li>
-        <li><a href="#registry" class="scroll">Registry</a></li>
-      </ul>
+    <nav id="site_nav" class="bottom">
+        <ul>
+            <li><a href="#hello" class="scroll active">Hello</a></li>
+            <li><a href="#wedding" class="scroll">The Wedding</a></li>
+            <li><a href="#accommodations" class="scroll">Accommodations</a></li>
+            <li><a href="#todo" class="scroll">Things To Do</a></li>
+            <li><a href="#map" class="scroll">Map</a></li>
+            <li><a href="#registry" class="scroll">Registry</a></li>
+        </ul>
     </nav>
 
-    <section id="about" class="parallax_container">
-      <div class="parallax ring_wrapper" data-speed="0.4">
-        <span class="ring move_up"></span>
-        <span class="ring move_up"></span>
-      </div>
-
-      <div class="content fade_in fade_in_always fade_out">
-        <h1>Emily <span>+</span> Jon</h1>
-        <p>September 6, 2014</p>
-      </div>
-
-      <div class="parallax photo hero" data-speed="0.1"></div>
-    </section>
-
-    <section id="wedding">
-      <div class="content center">
-        <h2>The Wedding</h2>
-        <p>Our ceremony and reception will take place on September 6th, 2014 at <a href="http://bkwinery.com">Brooklyn Winery</a>, in Williamsburg, Brooklyn.</p>
-        <p><a class="button" href="https://www.google.com/maps/preview#!data=!1m4!1m3!1d2563!2d-73.9551267!3d40.7172593!4m12!2m11!1m10!1s0x0%3A0xcb96162146bd1c88!3m8!1m3!1d387191!2d-73.979681!3d40.6974881!3m2!1i1024!2i768!4f13.1" title="View map of Brooklyn Winery">View map</a></p>
-      </div>
-    </section>
-
-    <div class="parallax_container">
-      <div class="parallax photo winery" data-speed="0.3"></div>
-    </div>
-
-    <section id="accommodations">
-      <div class="content">
-        <div class="wrapper">
-          <h2>Accommodations</h2>
-          <p>We have a block of rooms being held at the <a href="https://aws.passkey.com/event/10801711/owner/13490/home">Brooklyn Bridge Marriott</a>, a 10-15 minute drive from the wedding via the Brooklyn-Queens Expressway (I-278). Alternately, hotels within walking distance include <a href="http://wythehotel.com">Wythe Hotel</a> and <a href="http://www.kingandgrove.com/nyc-hotels/hotel-williamsburg">King &amp; Grove</a>.</p>
-          <p><a class="button" href="https://aws.passkey.com/event/10801711/owner/13490/home">Book your stay at the Marriott</a></p>
-          <div id="map_canvas" class="map"></div>
+    <section class="section photo hello" id="hello">
+        <div class="smoke">
+            <div class="content">
+                <div class="ring_wrapper">
+                    <span class="ring"></span>
+                    <span class="ring"></span>
+                </div>
+                <h1>Emily + Jon</h1>
+                <p>September 6, 2014</p>
+                <a class="tease scroll white animate" href="#wedding">&darr;</a>
+            </div>
         </div>
-      </div>
     </section>
 
-    <div class="parallax_container">
-      <div class="parallax photo waterfront" data-speed="0.3"></div>
-    </div>
-
-    <section id="todo">
-      <div class="content center">
-        <h2>Things To Do</h2>
-        <p>There are a lot of fun things to do in New York. We put together <a href="https://foursquare.com/emilygetman/list/best">a list</a> of some of our favorite places to eat, drink, and explore.</p>
-        <p><a class="button" href="https://foursquare.com/emilygetman/list/best">View list on Foursquare</a></p>
-      </div>
+    <section class="section" id="wedding">
+        <div class="content">
+            <h2>The Wedding</h2>
+            <p>Our ceremony and reception will take place on September 6th, 2014 at <a href="http://bkwinery.com" target="_blank">Brooklyn Winery</a>, in Williamsburg, Brooklyn.</p>
+            <a class="tease scroll" href="#accommodations">&darr;</a>
+        </div>
     </section>
 
-    <div class="parallax_container">
-      <div class="parallax photo killington" data-speed="0.3"></div>
-    </div>
+    <div class="section photo hero"></div>
 
-    <section id="registry">
-      <div class="content center">
-        <h2>Registry</h2>
-        <p>We are registered at <a href="http://www.crateandbarrel.com/Gift-Registry/Emily-Getman-and-Jon-Balbarin/r5105742">Crate and Barrel</a>.</p>
-      </div>
+    <section class="section" id="accommodations">
+        <div class="content">
+            <h2>Accommodations</h2>
+            <p>We have a block of rooms at the <a href="https://aws.passkey.com/event/10801711/owner/13490/home" target="_blank">Brooklyn Bridge Marriott</a>, a 10-15 minute drive from the wedding via the Brooklyn-Queens Expressway (I-278).</p>
+            <p><a class="button" href="https://aws.passkey.com/event/10801711/owner/13490/home" target="_blank">Book your stay</a></p>
+            <a class="tease scroll" href="#todo">&darr;</a>
+        </div>
     </section>
 
-    <hr>
+    <div class="section photo stairs"></div>
 
-    <footer id="site_footer">
-      <div class="content center">
-        <p>Check back for more updates!</p>
-      </div>
-    </footer>
+    <section class="section" id="todo">
+        <div class="content">
+            <h2>Things To Do</h2>
+            <p>There are a lot of fun things to do in New York. We put together <a href="https://foursquare.com/emilygetman/list/best" target="_blank">a Foursquare list</a> of some of our favorite places to eat, drink, and explore.</p>
+            <p><a class="button scroll" href="#map">Check out the map</a></p>
+            <a class="tease scroll" href="#map">&darr;</a>
+        </div>
+    </section>
 
-  </div>
+    <section class="section" id="map"></section>
 
-  <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <section class="section" id="registry">
+        <div class="content">
+            <h2>Registry</h2>
+            <p>We are registered at <a href="http://www.crateandbarrel.com/Gift-Registry/Emily-Getman-and-Jon-Balbarin/r5105742" target="_blank">Crate and Barrel</a>.</p>
+            <a class="tease scroll small" href="#hello">&uarr; Back to the top</a>
+        </div>
+    </section>
+
   <script src="assets/js/app.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3jkgkMnSLAM6Vu7u5U9dQmFV9V8MBLs&sensor=false"></script>
   <script>
     var setMarkers = function(map, locations) {
       var infowindow = new google.maps.InfoWindow();
-      var markerClick =(function(marker) {
+      var markerClick =(function(marker, url) {
         return function() {
-          infowindow.setContent(marker.title);
+          if(url){
+            infowindow.setContent('<a href="'+url+'" target="_blank" class="map_tooltip">'+marker.title+'</a>');
+          } else {
+            infowindow.setContent(marker.title);
+          }
           infowindow.open(map, marker);
         };
       });
@@ -118,29 +118,38 @@
             position: myLatLng,
             map: map,
             icon: location[3],
-            title: location[0]
+            title: location[0],
+            optimized: false,
+            zIndex:i,
         });
-        if(!Modernizr.touch) {
-          google.maps.event.addListener(marker, 'click', markerClick(marker));
-        }
+        google.maps.event.addListener(marker, 'click', markerClick(marker, location[4]));
       }
     };
-    var homeLatlng = new google.maps.LatLng(40.70562,-73.972558);
+    var homeLatlng = new google.maps.LatLng(40.717371,-73.955123);
     var mapOptions = {
       zoom: 13,
       center: homeLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       draggable: !Modernizr.touch,
       scrollwheel: false,
-      disableDoubleClickZoom: true,
-      disableDefaultUI:true,
-      zoomControl: !Modernizr.touch,
-      navigationControl: false,
+      disableDoubleClickZoom: false,
+      disableDefaultUI: false,
+      zoomControl: true,
+      panControl: false,
+      navigationControl: true,
       streetViewControl: false,
       mapTypeControl: false,
-      scaleControl: false,
+      scaleControl: !Modernizr.touch,
+      styles:     [{
+        featureType: "poi",
+        elementType: "all",
+        stylers: [
+              { visibility: "off" }
+        ]
+      }],
+
     };
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var goldStar = {
       path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
       fillColor: 'yellow',
@@ -149,13 +158,23 @@
       strokeColor: '#c73c30',
       strokeWeight: 2
     };
-    var places = [
-      ['Brooklyn Winery', 40.717371,-73.955123, goldStar],
-      ['Brooklyn Bridge Marriott', 40.694306,-73.988206]
-      //['Wythe Hotel', 40.722429,-73.95799],
-      //['King & Grove Hotel', 40.721274,-73.955437]
-    ];
-    setMarkers(map, places);
+    var foursquareURL = "https://api.foursquare.com/v2/lists/52c81eef498ebb32281a7c6f?oauth_token=X21YWONQMGXIC1V0CEI43VIO0212P3JT14B4QRNS5IXMX3RV&v=20140706"
+    $.get(foursquareURL, function(data) {
+      var items = data.response.list.listItems.items;
+      var foursquarePlaces = [];
+      for (var i = 0; i < items.length; i++){
+        var item = items[i];
+        var name = item.venue.name;
+        var lat = item.venue.location.lat;
+        var lng = item.venue.location.lng;
+        var url = 'http://foursquare.com/v/' + item.venue.id;
+        var itemEntry = [name, lat, lng, null, url];
+        foursquarePlaces.push(itemEntry);
+      }
+      foursquarePlaces.push(['Brooklyn Winery', 40.717371,-73.955123, goldStar]);
+      foursquarePlaces.push(['Brooklyn Bridge Marriott', 40.694306,-73.988206]);
+      setMarkers(map, foursquarePlaces);
+    });
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(homeLatlng);
     });
